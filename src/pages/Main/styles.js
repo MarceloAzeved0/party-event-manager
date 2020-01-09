@@ -3,6 +3,7 @@ import joker from '../../assets/joker.svg';
 
 export const Container = styled.div`
   display: flex;
+  justify-content: flex-end;
 `;
 
 export const ContainerButtons = styled.div`
@@ -51,23 +52,10 @@ export const LinkSignUp = styled.a`
   color: #e77cca;
 `;
 
-export const ImgSide = styled.div`
-  background: url(${joker});
-  left: 0px;
-  width: 671px;
-  height: 1024px;
-`;
-
-export const ImageContainer = styled.div`
-  position: absolute;
-  width: 671px;
-  height: 1024px;
-  background: linear-gradient(161.88deg, #fc66a4 0%, #993cff 98.7%);
-  opacity: 0.8;
-`;
-
 export const Content = styled.div`
   /* background-color: #000000; */
+  display: flex;
+  flex-direction: column;
   width: 54%;
   height: 94%;
 `;
@@ -94,13 +82,28 @@ export const Line = styled.div`
 `;
 
 export const ImgIcon = styled.img`
-  position: absolute;
-  left: 51.88%;
-  right: 43.96%;
-  top: 55.08%;
-  bottom: 37.21%;
+  margin-left: 27px;
+  right: 41px;
+  top: 34px;
+  bottom: 20px;
+`;
 
-  background: #e77cca;
+export const TextCard = styled.p`
+  width: 341px;
+  height: 65px;
+  left: 848px;
+  top: 578px;
+  margin-top: 48px;
+  margin-right: 43px;
+  margin-bottom: 20px;
+  margin-left: 41px;
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 25px;
+
+  color: #848484;
 `;
 
 export const Card = styled.div`
@@ -117,14 +120,37 @@ export const Card = styled.div`
   border-radius: 5px;
 `;
 
-export const TextCard = styled.p`
+export const CardParty = styled.div`
+  /* Rectangle 58 */
+  display: flex;
+  flex-direction: row;
+
   position: absolute;
   width: 512px;
   height: 141px;
   left: 720px;
-  top: 530px;
+  top: 694px;
 
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
   border-radius: 5px;
+`;
+
+export const TextFooter = styled.p`
+  position: absolute;
+  width: 206px;
+  height: 23px;
+  left: 727px;
+  top: 982px;
+
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #565656;
 `;
