@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 export const Label = styled.p`
-  position: absolute;
-  width: 74px;
   height: 25px;
 
   font-family: Quicksand;

@@ -10,19 +10,13 @@ export default createGlobalStyle`
 
   html, body, #root {
     min-height: 100%;
-    max-width: 1440px;
-    max-height: 1024px;
+    /* max-width: 1440px; */
+    /* max-height: 1024px; */
   }
 
   body {
     background: #E5E5E5;
     -webkit-font-smoothing: antialiased !important;
-  }
-
-  body, input, button {
-    color: '#222';
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
   }
 
   button {

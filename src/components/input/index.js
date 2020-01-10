@@ -1,16 +1,12 @@
 import styled from 'styled-components';
+import { Input as InputRock } from '@rocketseat/unform';
 
-export const Input = styled.input`
-  position: absolute;
-  width: 74px;
-  height: 25px;
-
-  font-family: Quicksand;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
-  text-align: center;
-
-  color: #565656;
+export const Input = styled(InputRock)`
+  width: 490px;
+  height: 60px;
+  border: 1px solid #cccccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 24px;
+  padding-left: 5px;
 `;

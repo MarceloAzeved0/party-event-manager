@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import joker from '../../assets/joker.svg';
 
 export const Container = styled.div`
   display: flex;
@@ -60,8 +59,11 @@ export const Content = styled.div`
 `;
 
 export const Title = styled.p`
-  margin-top: 156px;
-  margin-left: 45px;
+  left: 716px;
+  top: 156px;
+  width: 578px;
+  height: 65px;
+  position: absolute;
   font-family: Quicksand;
   font-style: normal;
   font-weight: normal;
