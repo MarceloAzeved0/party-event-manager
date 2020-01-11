@@ -49,10 +49,12 @@ export const Creators = {
     type: Types.LOGOUT,
   }),
 
-  nextUser: payload => ({
-    type: Types.NEXT_USER,
-    payload,
-  }),
+  nextUser: payload => {
+    return {
+      type: Types.NEXT_USER,
+      payload,
+    };
+  },
 };
 
 const initialState = {

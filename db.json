@@ -15,8 +15,73 @@
         "saturday",
         "sunday"
       ],
-      "day_shifts": ["morning", "afternoon", "night"],
+      "day_shifts": [
+        "morning",
+        "afternoon",
+        "night"
+      ],
       "price": 200
+    },
+    {
+      "category": "Palhaco",
+      "price": "250",
+      "day_shift": [
+        "night",
+        "afternoon"
+      ],
+      "week_days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday"
+      ],
+      "name": "gg",
+      "email": "gggg@gggg.com",
+      "password": "g73hi3",
+      "id": 2
+    },
+    {
+      "category": "Palhaco",
+      "price": "250",
+      "day_shift": [
+        "afternoon",
+        "morning"
+      ],
+      "week_days": [
+        "monday"
+      ],
+      "name": "aa",
+      "email": "aaa@aaa.com",
+      "password": "aaaa",
+      "id": 3
+    },
+    {
+      "category": "Palhaco",
+      "price": "250",
+      "day_shift": [
+        "afternoon",
+        "morning"
+      ],
+      "week_days": [
+        "tuesday"
+      ],
+      "id": 4
+    },
+    {
+      "category": "Palhaco",
+      "price": "400",
+      "day_shift": [
+        "afternoon",
+        "morning"
+      ],
+      "week_days": [
+        "tuesday"
+      ],
+      "name": "Marcelo",
+      "email": "marcelobernardy@gmail.com",
+      "password": "g73hi3",
+      "id": 5
     }
   ],
   "events": [

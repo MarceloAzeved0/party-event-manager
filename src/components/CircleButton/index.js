@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
-export const CircleButton = styled.div`
-  font-family: Quicksand;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
+export const CircleButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   line-height: 25px;
-  text-align: center;
   width: 65px;
   height: 62px;
+  margin-right: 7px;
 
   color: #ffffff;
 
@@ -19,4 +18,14 @@ export const CircleButton = styled.div`
   border: ${props => (props.active ? '' : '1px solid #565656')};
   border-radius: 50%;
   box-sizing: border-box;
+
+  p {
+    font-family: Quicksand;
+    font-style: normal;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    width: 17px;
+    height: 29px;
+  }
 `;

@@ -17,7 +17,6 @@ import SideImageJoker from '../../components/SideImageJoker';
 import { Input } from '../../components/input';
 import { Label } from '../../components/label';
 import { Creators } from '../../store/ducks/modules/user';
-import history from '../../services/history';
 
 const schema = Yup.object().shape({
   name: Yup.string().required('O nome é obrigatório'),
@@ -27,11 +26,11 @@ const schema = Yup.object().shape({
   password: Yup.string().required('A senha é obrigatória'),
 });
 
-export default function SignUp() {
+export default function SignUp({ history }) {
   const dispatch = useDispatch();
   const handleSubmit = data => {
     dispatch(Creators.nextUser(data));
-    history.push('/register-2');
+    history.push('/registerFinish');
   };
   return (
     <Container>

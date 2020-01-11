@@ -16,7 +16,9 @@ export const ContentCol = styled.div`
 export const Content = styled.div`
   /* background-color: #000000; */
   display: flex;
-  justify-content: center;
+  margin-top: 34px;
+  margin-bottom: 10px;
+  margin-left: 49px;
   flex-direction: row;
 `;
 
@@ -81,6 +83,24 @@ export const ContentButton = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1;
+`;
+
+export const ButtonShiftDay = styled.button`
+  width: 155px;
+  height: 65px;
+  background: ${props => (props.active ? '#f097ce' : '#eeeeee')};
+  margin-right: 19px;
+  border-radius: 5px;
+  p {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+
+    color: #ffffff;
+  }
 `;
 
 export const ButtonLogin = styled.button`
