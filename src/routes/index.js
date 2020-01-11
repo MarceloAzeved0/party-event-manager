@@ -1,10 +1,12 @@
 import React from 'react';
-import { BrowserRouter, Switch } from 'react-router-dom';
+import { BrowserRouter, Switch, Redirect } from 'react-router-dom';
 import Route from './Route';
 
 import Main from '../pages/Main';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
+import Schedule from '../pages/Schedule';
+import Register2 from '../pages/SignUp/register-2';
 
 export default function Routes() {
   return (
@@ -13,6 +15,9 @@ export default function Routes() {
         <Route path="/" exact component={Main} />
         <Route path="/login" component={SignIn} />
         <Route path="/register" component={SignUp} />
+        <Route path="/register-2" component={Register2} />
+        <Route path="/schedule" component={Schedule} isPrivate />
+        <Redirect from="*" to="/" />
       </Switch>
     </BrowserRouter>
   );

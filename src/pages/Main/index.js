@@ -31,7 +31,9 @@ export default function Main() {
           <Link to="login">
             <ButtonSignIn>Entrar</ButtonSignIn>
           </Link>
-          <LinkSignUp>Criar conta</LinkSignUp>
+          <Link to="register">
+            <LinkSignUp>Criar conta</LinkSignUp>
+          </Link>
         </ContainerButtons>
         <Line />
         <Card>

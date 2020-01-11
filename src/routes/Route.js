@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 
 export default function RouteWrapper({
@@ -7,14 +8,14 @@ export default function RouteWrapper({
   isPrivate = false,
   ...rest
 }) {
-  const signed = false;
+  const signed = useSelector(state => state.user.signed);
 
   if (!signed && isPrivate) {
     return <Redirect to="/" />;
   }
 
   if (signed && !isPrivate) {
-    return <Redirect to="/dashboard" />;
+    return <Redirect to="/schedule" />;
   }
 
   return <Route {...rest} component={Component} />;

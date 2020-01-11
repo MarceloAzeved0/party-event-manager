@@ -1,19 +1,27 @@
 export const Types = {
-  LOGIN: 'auth/LOGIN',
-  LOGIN_SUCCESS: 'auth/LOGIN_SUCCESS',
-  LOGIN_FAILURE: 'auth/LOGIN_FAILURE',
-  LOGIN_REQUEST: 'auth/LOGIN_REQUEST',
-  LOGOUT: 'auth/LOGOUT',
+  LOGIN: 'user/LOGIN',
+  LOGIN_SUCCESS: 'user/LOGIN_SUCCESS',
+  LOGIN_FAILURE: 'user/LOGIN_FAILURE',
+  LOGIN_REQUEST: 'user/LOGIN_REQUEST',
+  LOGOUT: 'user/LOGOUT',
+  CREATE_USER: 'user/CREATE_USER',
+  NEXT_USER: 'user/NEXT_USER',
 };
 
 export const Creators = {
-  login: (username, password) => {
+  login: data => {
     return {
       type: Types.LOGIN,
       payload: {
-        username,
-        password,
+        email: data.email,
+        password: data.password,
       },
+    };
+  },
+  createUser: data => {
+    return {
+      type: Types.CREATE_USER,
+      payload: data,
     };
   },
 
@@ -40,9 +48,15 @@ export const Creators = {
   logout: () => ({
     type: Types.LOGOUT,
   }),
+
+  nextUser: payload => ({
+    type: Types.NEXT_USER,
+    payload,
+  }),
 };
 
 const initialState = {
+  user: {},
   signed: false,
   data: [],
   error: null,
@@ -75,6 +89,17 @@ export default function reducer(state = initialState, action) {
       return {
         state: initialState,
       };
+    case Types.NEXT_USER:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          name: action.payload.name,
+          email: action.payload.email,
+          password: action.payload.password,
+        },
+      };
+
     default:
       return state;
   }

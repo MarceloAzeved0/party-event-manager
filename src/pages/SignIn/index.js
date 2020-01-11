@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import api from '../../services/api';
+import { useDispatch } from 'react-redux';
+import * as Yup from 'yup';
 import SideImageJoker from '../../components/SideImageJoker';
 import {
   Container,
@@ -20,12 +21,20 @@ import {
 } from './styles';
 import { Input } from '../../components/input';
 import { Label } from '../../components/label';
+import { Creators } from '../../store/ducks/modules/user';
+
+const schema = Yup.object().shape({
+  email: Yup.string()
+    .email('Insira um e-mail válido')
+    .required('O email é obrigatório'),
+  password: Yup.string().required('A senha é obrigatória'),
+});
 
 export default function SignIn() {
+  const dispatch = useDispatch();
+
   const handleSubmit = async data => {
-    console.tron.log(data);
-    const response = await api.get(`/users?email=${data.email}`);
-    console.tron.log(response);
+    dispatch(Creators.login(data));
   };
 
   return (
@@ -35,7 +44,7 @@ export default function SignIn() {
         <ContentTitle>
           <Title>Login</Title>
         </ContentTitle>
-        <Form onSubmit={handleSubmit}>
+        <Form schema={schema} onSubmit={handleSubmit}>
           <ContentLabel>
             <Label>E-mail</Label>
           </ContentLabel>
