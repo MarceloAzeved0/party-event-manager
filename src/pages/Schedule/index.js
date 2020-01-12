@@ -3,8 +3,11 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import moment from 'moment';
 import 'moment/locale/pt-br';
+import Modal from 'react-modal';
 import LeftArrow from '../../assets/leftArrow.svg';
 import RightArrow from '../../assets/rightArrow.svg';
+import { Label } from '../../components/label';
+import { Input } from '../../components/input';
 
 import {
   Available,
@@ -16,6 +19,7 @@ import {
   ScheduleContainer,
   ScheduleWeek,
   ColumnContent,
+  Form,
   ContentAvailable,
   RightImage,
   LeftImage,
@@ -25,14 +29,33 @@ import {
   Title,
   Line,
   LineVert,
+  TitleModal,
+  AddEvent,
   NotAvailable,
 } from './styles';
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    width: '567px',
+    height: '829px',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    background: '#FFFFFF',
+    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.17)',
+    borderRadius: '5px',
+  },
+};
 
 export default function Schedule() {
   const dispatch = useDispatch();
 
   const userData = useSelector(state => state.user.data);
   console.tron.log('teste', userData);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const [week, setWeek] = useState(0);
   const days = [
     '',
@@ -129,21 +152,45 @@ export default function Schedule() {
     return table;
   };
 
-  console.tron.log(
-    moment()
-      .subtract(1, 'weeks')
-      .startOf('isoWeek')
-      .format('')
-  );
-  console.tron.log(
-    moment()
-      .subtract(1, 'weeks')
-      .endOf('isoWeek')
-      .format('')
-  );
-
   return (
-    <Container>
+    <Container modalIsOpen={modalIsOpen}>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={() => setModalIsOpen(false)}
+        contentLabel="Example Modal"
+        style={customStyles}
+      >
+        <Content>
+          <TitleModal>Cadastrar Evento</TitleModal>
+        </Content>
+        <Form>
+          <Content>
+            <Label>Nome do Evento</Label>
+          </Content>
+          <Content>
+            <Input type="text" name="name" />
+          </Content>
+          <Content>
+            <Label>Local</Label>
+          </Content>
+          <Content>
+            <Input type="text" name="local" />
+          </Content>
+          <Content>
+            <Label>Data</Label>
+            <Label>Turno</Label>
+          </Content>
+          <Content>
+            <Input type="data" name="data" />
+            <Input type="data" name="data" />
+          </Content>
+          <Content>
+            <AddEvent>
+              <p>Adicionar Evento</p>
+            </AddEvent>
+          </Content>
+        </Form>
+      </Modal>
       <ContentTitle>
         <MonthTitle>
           {moment()
@@ -152,7 +199,7 @@ export default function Schedule() {
             .locale('pt-br')
             .format('MMMM')}
         </MonthTitle>
-        <NewEvent>
+        <NewEvent type="button" onClick={() => setModalIsOpen(true)}>
           <p>Novo Evento</p>
         </NewEvent>
       </ContentTitle>

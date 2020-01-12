@@ -1,8 +1,22 @@
 import styled from 'styled-components';
+import { Form as FormRock } from '@rocketseat/unform';
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  background-color: ${props => (props.modalIsOpen ? 'rgba(0, 0, 0, 0.5)' : '')};
+`;
+export const Form = styled(FormRock)`
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  width: 100%;
+  span {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    color: #ff0000;
+  }
 `;
 
 export const ContentTitle = styled.div`
@@ -215,4 +229,33 @@ export const Available = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
+`;
+
+export const TitleModal = styled.h1`
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 37px;
+  text-align: center;
+  margin-bottom: 61px;
+  color: #f883ba;
+`;
+
+export const AddEvent = styled.button`
+  background: linear-gradient(101deg, #f180c1 4.55%, #a450c9 95.79%);
+  border-radius: 5px;
+  width: 462px;
+  margin-left: 35px;
+  height: 85px;
+  p {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+
+    color: #ffffff;
+  }
 `;
