@@ -82,6 +82,21 @@
       "email": "marcelobernardy@gmail.com",
       "password": "g73hi3",
       "id": 5
+    },
+    {
+      "category": "Malabarista",
+      "price": "800",
+      "day_shift": [
+        "morning"
+      ],
+      "week_days": [
+        "saturday",
+        "sunday"
+      ],
+      "name": "tete",
+      "email": "tete@tete.com",
+      "password": "tete",
+      "id": 6
     }
   ],
   "events": [

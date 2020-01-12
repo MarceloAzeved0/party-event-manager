@@ -60,7 +60,7 @@ export const Creators = {
 const initialState = {
   user: {},
   signed: false,
-  data: [],
+  data: {},
   error: null,
   loading: false,
 };
@@ -81,8 +81,9 @@ export default function reducer(state = initialState, action) {
       };
     }
     case Types.LOGIN_SUCCESS:
+      console.tron.log('aqui', action.payload);
       return {
-        data: action.payload.data,
+        data: action.payload,
         signed: true,
         loading: false,
         error: null,

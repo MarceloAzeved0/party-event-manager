@@ -17,7 +17,7 @@ export const MonthTitle = styled.h1`
   font-weight: bold;
   font-size: 30px;
   line-height: 37px;
-  margin-left: 168px;
+  margin-left: 160px;
   margin-top: 73px;
   margin-bottom: 30px;
   /* identical to box height */
@@ -35,7 +35,7 @@ export const NewEvent = styled.button`
   height: 50px;
   background: #f180c1;
   border-radius: 5px;
-  margin-right: 216px;
+  margin-right: 170px;
   margin-top: 75px;
   margin-bottom: 32px;
 
@@ -74,14 +74,28 @@ export const SideSchedule = styled.div`
   width: 80px;
   height: 708px;
   background: #ffffff;
+  margin-right: -10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-
   display: flex;
   justify-content: center;
   align-items: center;
+
+  button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+  }
 `;
 
+export const RightImage = styled.button`
+  margin-left: -70px;
+`;
+
+export const LeftImage = styled.button`
+  margin-right: -70px;
+`;
 export const ColumnContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -94,7 +108,7 @@ export const ColumnContent = styled.div`
 export const CircleDay = styled.div`
   background: #f5a7d4;
   width: 53px;
-  height: 53px;
+  height: 58px;
   border-radius: 50%;
   margin-top: 26px;
   display: flex;
@@ -116,8 +130,8 @@ export const CircleDay = styled.div`
 
 export const ContentLine = styled.div`
   /* background-color: #000000; */
-  margin-bottom: 10px;
   margin-top: 36px;
+  margin-bottom: 5px;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -160,4 +174,45 @@ export const LineVert = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+`;
+
+export const ContentAvailable = styled.div`
+  /* background-color: #000000; */
+  display: flex;
+  margin-top: 14px;
+  flex-direction: row;
+`;
+
+export const NotAvailable = styled.div`
+  background: rgba(196, 196, 196, 0.3);
+  border-radius: 5px;
+  width: 120px;
+  height: 156px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  p {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+
+    opacity: 0.3;
+  }
+`;
+
+export const Available = styled.div`
+  border-radius: 5px;
+  width: 120px;
+  height: 156px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 `;

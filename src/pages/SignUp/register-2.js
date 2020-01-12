@@ -124,7 +124,7 @@ export default function Register2() {
               }
               active={thursday}
             >
-              <p>T</p>
+              <p>Q</p>
             </CircleButton>
             <CircleButton
               type="button"

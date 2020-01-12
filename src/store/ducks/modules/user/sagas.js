@@ -18,9 +18,10 @@ export function* login({ payload }) {
       toast.error('Erro no login', 'Login não encontrado');
       return;
     }
-
-    yield put(Creators.loginSuccess({ ...response.data }));
+    console.tron.log('resp', response);
+    yield put(Creators.loginSuccess(response.data[0]));
     history.push('/schedule');
+    toast.success('Login realizado com sucesso!');
   } catch (err) {
     toast.error(
       'Falha na autenticação',
@@ -40,10 +41,11 @@ export function* createUser({ payload }) {
 
     if (!response.status === 201 && !response.status === 200) {
       toast.error('Falha na criação da conta');
+      return;
     }
 
     toast.success('Conta criada com sucesso!');
-    yield put(Creators.loginSuccess({ ...response.data }));
+    yield put(Creators.loginSuccess(response.data[0]));
     history.push('/schedule');
   } catch (err) {
     toast.error(
