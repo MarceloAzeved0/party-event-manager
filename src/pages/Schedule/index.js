@@ -52,7 +52,7 @@ export default function Schedule() {
     let workingShift = false;
     for (let i = 0; i < 3; i++) {
       workingShift = false;
-      if (userData.day_shift.includes(dayShift[i])) {
+      if (userData.day_shift && userData.day_shift.includes(dayShift[i])) {
         workingShift = true;
       }
 
@@ -62,7 +62,7 @@ export default function Schedule() {
             <Available />
           ) : (
             <NotAvailable>
-              <p> NÃO DISPONÍVEl</p>
+              <p> NÃO DISPONÍVEL</p>
             </NotAvailable>
           )}
         </ContentAvailable>
@@ -86,7 +86,7 @@ export default function Schedule() {
 
     for (let i = 0; i < 7; i++) {
       working = false;
-      if (userData.week_days.includes(dayOfWeek[i])) {
+      if (userData.week_days && userData.week_days.includes(dayOfWeek[i])) {
         working = true;
       }
       table.push(
