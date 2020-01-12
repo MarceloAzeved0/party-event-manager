@@ -85,5 +85,79 @@ export const SideSchedule = styled.div`
 export const ColumnContent = styled.div`
   display: flex;
   flex-direction: column;
+  /* justify-content: center; */
+  width: 100%;
+  align-items: center;
   /* flex: 1; */
+`;
+
+export const CircleDay = styled.div`
+  background: #f5a7d4;
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
+  margin-top: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    text-align: center;
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 37px;
+    /* identical to box height */
+
+    color: #ffffff;
+  }
+`;
+
+export const ContentLine = styled.div`
+  /* background-color: #000000; */
+  margin-bottom: 10px;
+  margin-top: 36px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+`;
+
+export const Content = styled.div`
+  /* background-color: #000000; */
+  display: flex;
+  margin-top: 34px;
+  flex-direction: row;
+`;
+
+export const Title = styled.p`
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  color: #565656;
+`;
+
+export const Line = styled.div`
+  background: #565656;
+  opacity: 0.9;
+  border-radius: 10px;
+  /* transform: rotate(-90deg); */
+  height: 4px;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+`;
+
+export const LineVert = styled.div`
+  width: 4px;
+  background: #f4f4f4;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 `;
