@@ -8,7 +8,8 @@ export default function RouteWrapper({
   isPrivate = false,
   ...rest
 }) {
-  const signed = useSelector(state => state.user.signed);
+  // const signed = useSelector(state => state.user.signed);
+  const signed = true;
 
   if (!signed && isPrivate) {
     return <Redirect to="/" />;
