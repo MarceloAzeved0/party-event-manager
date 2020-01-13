@@ -46,7 +46,6 @@ export default function Register2() {
   const [sunday, setSunday] = useState(false);
 
   const handleSubmit = data => {
-    console.tron.log('tetse', weekDays, dayShift);
     const value = { ...data, day_shift: dayShift, week_days: weekDays };
 
     dispatch(Creators.createUser(value));

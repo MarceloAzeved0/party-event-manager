@@ -18,7 +18,6 @@ export function* login({ payload }) {
       toast.error('Erro no login', 'Login não encontrado');
       return;
     }
-    console.tron.log('resp', response);
     yield put(Creators.loginSuccess(response.data[0]));
     history.push('/schedule');
     toast.success('Login realizado com sucesso!');
@@ -43,9 +42,8 @@ export function* createUser({ payload }) {
       toast.error('Falha na criação da conta');
       return;
     }
-
     toast.success('Conta criada com sucesso!');
-    yield put(Creators.loginSuccess(response.data[0]));
+    yield put(Creators.loginSuccess(response.data));
     history.push('/schedule');
   } catch (err) {
     toast.error(

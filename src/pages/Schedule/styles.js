@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Form as FormRock } from '@rocketseat/unform';
+import { Form as FormRock, Select } from '@rocketseat/unform';
 
 export const Container = styled.div`
   display: flex;
@@ -23,6 +23,16 @@ export const ContentTitle = styled.div`
   display: flex;
   flex: 1;
   justify-content: space-between;
+`;
+
+export const ContentInput = styled.div`
+  height: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 49px;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
 `;
 
 export const MonthTitle = styled.h1`
@@ -160,6 +170,21 @@ export const Content = styled.div`
   flex-direction: row;
 `;
 
+export const ContentLabel = styled.div`
+  /* background-color: #000000; */
+  display: flex;
+  margin-top: 40px;
+
+  flex-direction: row;
+`;
+export const DivColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+  margin-left: 0px;
+`;
+
 export const Title = styled.p`
   font-family: Quicksand;
   font-style: normal;
@@ -247,6 +272,7 @@ export const AddEvent = styled.button`
   border-radius: 5px;
   width: 462px;
   margin-left: 35px;
+  margin-top: 30px;
   height: 85px;
   p {
     font-family: Quicksand;
@@ -258,4 +284,39 @@ export const AddEvent = styled.button`
 
     color: #ffffff;
   }
+`;
+
+export const SelectDayShift = styled(Select)`
+  width: 225px;
+  height: 68px;
+  border: 1px solid #cccccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #ffffff;
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 20px;
+  padding: 12px;
+  text-align: center;
+
+  color: #ee7ec2;
+  option {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+
+    color: #cccccc;
+  }
+`;
+
+export const BoxEvent = styled.div`
+  width: 120px;
+  height: 156px;
+  background: #f5a7d4;
+  border-radius: 5px;
 `;

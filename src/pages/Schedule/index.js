@@ -1,22 +1,28 @@
+/* eslint-disable no-nested-ternary */
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable no-plusplus */
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import moment from 'moment';
 import 'moment/locale/pt-br';
+import 'moment/locale/en-SG';
 import Modal from 'react-modal';
+import { Creators } from '../../store/ducks/modules/events';
 import LeftArrow from '../../assets/leftArrow.svg';
 import RightArrow from '../../assets/rightArrow.svg';
 import { Label } from '../../components/label';
 import { Input } from '../../components/input';
-
 import {
   Available,
+  BoxEvent,
   Container,
   NewEvent,
   MonthTitle,
   ContentTitle,
+  SelectDayShift,
   SideSchedule,
   ScheduleContainer,
+  ContentLabel,
   ScheduleWeek,
   ColumnContent,
   Form,
@@ -24,6 +30,7 @@ import {
   RightImage,
   LeftImage,
   CircleDay,
+  DivColumn,
   Content,
   ContentLine,
   Title,
@@ -51,11 +58,34 @@ const customStyles = {
 };
 
 export default function Schedule() {
-  const dispatch = useDispatch();
-
   const userData = useSelector(state => state.user.data);
-  console.tron.log('teste', userData);
+  const events = useSelector(state => state.event.events);
+
+  const dispatch = useDispatch();
+  Modal.setAppElement('#root');
+
+  useEffect(() => {
+    async function eventsFunction() {
+      await dispatch(Creators.listEvents(userData.id));
+    }
+    eventsFunction();
+  }, [dispatch, userData.id]);
+
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const handleSubmit = data => {
+    const dataPayload = {
+      ...data,
+      user_id: userData.id,
+      date: moment(data.date).format('X'),
+      week_day: moment(data.date)
+        .locale('en-SG')
+        .format('dddd'),
+    };
+    dispatch(Creators.createEvent(dataPayload));
+
+    setModalIsOpen(false);
+  };
+
   const [week, setWeek] = useState(0);
   const days = [
     '',
@@ -68,21 +98,34 @@ export default function Schedule() {
     'Domingo',
   ];
 
-  const listEvents = working => {
+  const listEvents = (working, eventsMarked) => {
     const dayShift = ['morning', 'afternoon', 'night'];
-
     const lines = [];
+    let eventShiftMarked = false;
     let workingShift = false;
     for (let i = 0; i < 3; i++) {
       workingShift = false;
+      eventShiftMarked = false;
       if (userData.day_shift && userData.day_shift.includes(dayShift[i])) {
         workingShift = true;
+        if (eventsMarked && eventsMarked.length) {
+          for (const element of eventsMarked) {
+            if (element.day_shift === dayShift[i]) {
+              eventShiftMarked = true;
+              break;
+            }
+          }
+        }
       }
 
       lines.push(
         <ContentAvailable>
           {working && workingShift ? (
-            <Available />
+            eventShiftMarked ? (
+              <BoxEvent />
+            ) : (
+              <Available />
+            )
           ) : (
             <NotAvailable>
               <p> NÃO DISPONÍVEL</p>
@@ -94,7 +137,7 @@ export default function Schedule() {
     return lines;
   };
 
-  const createTable = () => {
+  const createTable = useCallback(() => {
     const dayOfWeek = [
       'sunday',
       'monday',
@@ -106,12 +149,30 @@ export default function Schedule() {
     ];
     const table = [];
     let working = false;
-
+    let eventsMarked = [];
     for (let i = 0; i < 7; i++) {
+      eventsMarked = [];
       working = false;
       if (userData.week_days && userData.week_days.includes(dayOfWeek[i])) {
         working = true;
       }
+
+      const date2 = moment()
+        .subtract(week, 'weeks')
+        .startOf('monday')
+        .add(i, 'days')
+        .format('YYYY-MM-DD');
+
+      const dateMoment = moment(date2).format('X');
+
+      if (events && events.length) {
+        for (const element of events) {
+          if (element.date === dateMoment) {
+            eventsMarked.push(element);
+          }
+        }
+      }
+
       table.push(
         <>
           <ColumnContent>
@@ -142,7 +203,7 @@ export default function Schedule() {
             <ContentLine>
               <Line />
             </ContentLine>
-            {listEvents(working)}
+            {listEvents(working, eventsMarked)}
           </ColumnContent>
           {i === 6 ? '' : <LineVert />}
         </>
@@ -150,7 +211,12 @@ export default function Schedule() {
     }
 
     return table;
-  };
+  });
+
+  useEffect(() => {
+    createTable();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [events]);
 
   return (
     <Container modalIsOpen={modalIsOpen}>
@@ -163,7 +229,7 @@ export default function Schedule() {
         <Content>
           <TitleModal>Cadastrar Evento</TitleModal>
         </Content>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <Content>
             <Label>Nome do Evento</Label>
           </Content>
@@ -174,18 +240,33 @@ export default function Schedule() {
             <Label>Local</Label>
           </Content>
           <Content>
-            <Input type="text" name="local" />
+            <Input type="text" name="address" />
           </Content>
+          <ContentLabel>
+            <DivColumn>
+              <Label>Data</Label>
+            </DivColumn>
+            <DivColumn>
+              <Label>Turno</Label>
+            </DivColumn>
+          </ContentLabel>
+          <ContentLabel>
+            <DivColumn>
+              <Input width={192} height={68} type="date" name="date" />
+            </DivColumn>
+            <DivColumn>
+              <SelectDayShift
+                options={[
+                  { id: 'morning', title: 'morning' },
+                  { id: 'afternoon', title: 'afternoon' },
+                  { id: 'night', title: 'night' },
+                ]}
+                name="day_shift"
+              />
+            </DivColumn>
+          </ContentLabel>
           <Content>
-            <Label>Data</Label>
-            <Label>Turno</Label>
-          </Content>
-          <Content>
-            <Input type="data" name="data" />
-            <Input type="data" name="data" />
-          </Content>
-          <Content>
-            <AddEvent>
+            <AddEvent type="submit">
               <p>Adicionar Evento</p>
             </AddEvent>
           </Content>

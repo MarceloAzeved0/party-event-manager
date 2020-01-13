@@ -97,16 +97,239 @@
       "email": "tete@tete.com",
       "password": "tete",
       "id": 6
+    },
+    {
+      "category": "Palhaco",
+      "price": "250",
+      "day_shift": [
+        "morning",
+        "night"
+      ],
+      "week_days": [
+        "tuesday",
+        "wednesday"
+      ],
+      "name": "marcelo",
+      "email": "marcelo@marcelo.com",
+      "password": "marcelo",
+      "id": 7
+    },
+    {
+      "category": "Palhaco",
+      "price": "550",
+      "day_shift": [
+        "morning",
+        "night"
+      ],
+      "week_days": [
+        "tuesday",
+        "wednesday"
+      ],
+      "name": "marcelo",
+      "email": "marcelo@marcelo.com",
+      "password": "marcelo",
+      "id": 8
+    },
+    {
+      "category": "Palhaco",
+      "price": "9000",
+      "day_shift": [
+        "morning",
+        "night"
+      ],
+      "week_days": [
+        "thursday",
+        "sunday"
+      ],
+      "name": "marcelo",
+      "email": "marcelo@marcelo.com",
+      "password": "marcelo",
+      "id": 9
     }
   ],
   "events": [
     {
       "id": 1,
+      "user_id": 1,
       "name": "evento teste",
       "date": "1574433747316",
       "week_day": "friday",
       "day_shift": "morning",
       "address": "Rua Teste, 200 - 221B"
+    },
+    {
+      "name": "teset",
+      "address": "teste",
+      "date": "2020-01-02",
+      "day_shift": "morning",
+      "user_id": 6,
+      "id": 2
+    },
+    {
+      "name": "teste",
+      "address": "teste teste 662",
+      "date": null,
+      "day_shift": "Quarta-feira",
+      "user_id": 6,
+      "id": 3
+    },
+    {
+      "name": "teste",
+      "address": "teste teste teste",
+      "date": "1577934000",
+      "day_shift": "Quinta-feira",
+      "user_id": 6,
+      "id": 4
+    },
+    {
+      "name": "tete",
+      "address": "tete tete 62",
+      "date": "1577847600",
+      "day_shift": "Mittwoch",
+      "user_id": 6,
+      "id": 5
+    },
+    {
+      "name": "tete",
+      "address": "teste teste",
+      "date": "1579057200",
+      "day_shift": "Wednesday",
+      "user_id": 6,
+      "id": 6
+    },
+    {
+      "name": "tete",
+      "address": "tete tete tete",
+      "date": "1580439600",
+      "day_shift": "Friday",
+      "user_id": 6,
+      "id": 7
+    },
+    {
+      "name": "teste",
+      "address": "teste",
+      "date": "1578798000",
+      "day_shift": "Sunday",
+      "user_id": 6,
+      "id": 8
+    },
+    {
+      "name": "testestes",
+      "address": "sgtatsa",
+      "date": "1579402800",
+      "day_shift": "Sunday",
+      "user_id": 6,
+      "id": 9
+    },
+    {
+      "name": "fdt",
+      "address": "gdtefd",
+      "date": "1580007600",
+      "day_shift": "Sunday",
+      "user_id": 6,
+      "id": 10
+    },
+    {
+      "name": "etetfdsb",
+      "address": "ydsgdsvh",
+      "date": "1580007600",
+      "day_shift": "Sunday",
+      "user_id": 6,
+      "id": 11
+    },
+    {
+      "name": "tete",
+      "address": "tete",
+      "date": "1580007600",
+      "day_shift": "Sunday",
+      "user_id": 6,
+      "id": 12
+    },
+    {
+      "name": "tete",
+      "address": "tete",
+      "date": "1580007600",
+      "day_shift": "Sunday",
+      "user_id": 6,
+      "id": 13
+    },
+    {
+      "name": "teste",
+      "address": "tefdaftadtad",
+      "date": "1580007600",
+      "day_shift": "Sunday",
+      "user_id": 6,
+      "id": 14
+    },
+    {
+      "name": "tete",
+      "address": "tete",
+      "date": "1579402800",
+      "day_shift": "Sunday",
+      "user_id": 6,
+      "id": 15
+    },
+    {
+      "name": "gstatsa",
+      "address": "ftassa",
+      "date": "1580007600",
+      "day_shift": "Sunday",
+      "user_id": 6,
+      "id": 16
+    },
+    {
+      "name": "teste",
+      "address": "teste teste",
+      "date": "1580007600",
+      "day_shift": "morning",
+      "user_id": 6,
+      "week_day": "Sunday",
+      "id": 17
+    },
+    {
+      "name": "tete s2",
+      "address": "tete s2",
+      "date": "1580007600",
+      "day_shift": "morning",
+      "user_id": 6,
+      "week_day": "Sunday",
+      "id": 18
+    },
+    {
+      "name": "testet",
+      "address": "tetste",
+      "date": "1579402800",
+      "day_shift": "morning",
+      "user_id": 6,
+      "week_day": "Sunday",
+      "id": 19
+    },
+    {
+      "name": "teste",
+      "address": "tete",
+      "date": "1579489200",
+      "day_shift": "morning",
+      "user_id": 6,
+      "week_day": "Monday",
+      "id": 20
+    },
+    {
+      "name": "teste",
+      "address": "teste",
+      "date": "1578970800",
+      "day_shift": "night",
+      "user_id": 3,
+      "week_day": "Tuesday",
+      "id": 21
+    },
+    {
+      "name": "teste",
+      "address": "teste tetsgtsa",
+      "date": "1578970800",
+      "day_shift": "morning",
+      "user_id": 3,
+      "week_day": "Tuesday",
+      "id": 22
     }
   ]
 }

@@ -7,6 +7,7 @@ export const Select = styled(SelectRock)`
   border-radius: 5px;
   width: 501px;
   height: 60px;
+  padding: 12px;
 
   font-family: Quicksand;
   font-style: normal;
