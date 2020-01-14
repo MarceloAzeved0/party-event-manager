@@ -9,6 +9,7 @@ import {
   Content,
   ContentCol,
   ContentTitle,
+  ContentLine,
   ContentLabel,
   ContentInput,
   ContentButton,
@@ -65,9 +66,9 @@ export default function SignIn() {
         <Content>
           <ForgotPassword>Esqueci minha senha</ForgotPassword>
         </Content>
-        <Content>
+        <ContentLine>
           <Line />
-        </Content>
+        </ContentLine>
         <Content>
           <NoHaveAccount>Não possui uma conta?</NoHaveAccount>
         </Content>

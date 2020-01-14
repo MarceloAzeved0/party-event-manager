@@ -8,8 +8,14 @@ export const Container = styled.div`
 export const ContainerCol = styled.div`
   display: flex;
   flex-direction: column;
+
   width: 54%;
   height: 94%;
+
+  @media (max-width: 671px) {
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const ContainerButtons = styled.div`
@@ -45,6 +51,15 @@ export const ButtonSignIn = styled.button`
   text-align: center;
 
   color: #ffffff;
+
+  @media (max-width: 671px) {
+    flex-direction: column;
+    width: 20.7vh;
+    margin-bottom: 1.9vh;
+    text-align: center;
+    margin-left: 2.7vw;
+    margin-right: 2.7vw;
+  }
 `;
 
 export const LinkSignUp = styled.a`
@@ -88,6 +103,11 @@ export const ContentButton = styled.div`
   flex-direction: row;
   margin-top: 7.78vh;
   margin-left: 3.12vw;
+
+  @media (max-width: 671px) {
+    flex-direction: column;
+    flex: 1;
+  }
 `;
 
 export const Content = styled.div`
@@ -104,6 +124,11 @@ export const ContentTitle = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1;
+
+  @media (max-width: 671px) {
+    justify-content: center;
+    align-items: center;
+  }
 `;
 export const Title = styled.p`
   font-family: Quicksand;
@@ -112,6 +137,10 @@ export const Title = styled.p`
   font-size: 3vh;
   line-height: 4.5rem;
   color: #565656;
+
+  @media (max-width: 671px) {
+    color: #ffffff;
+  }
 `;
 
 export const Line = styled.div`
@@ -119,6 +148,10 @@ export const Line = styled.div`
   height: 0px;
 
   border: 1px solid #cccccc;
+
+  @media (max-width: 671px) {
+    display: none;
+  }
 `;
 
 export const ImgIcon = styled.img`
@@ -149,6 +182,10 @@ export const Card = styled.div`
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
   border-radius: 5px;
+
+  @media (max-width: 671px) {
+    display: none;
+  }
 `;
 
 export const CardParty = styled.div`
@@ -162,6 +199,10 @@ export const CardParty = styled.div`
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
   border-radius: 5px;
+
+  @media (max-width: 671px) {
+    display: none;
+  }
 `;
 
 export const TextFooter = styled.p`

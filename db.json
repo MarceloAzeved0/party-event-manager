@@ -160,6 +160,22 @@
       "email": "marceloTete@marceloTete.com",
       "password": "marceloTete",
       "id": 10
+    },
+    {
+      "category": "Palhaco",
+      "price": "4000",
+      "day_shift": [
+        "morning",
+        "afternoon"
+      ],
+      "week_days": [
+        "wednesday",
+        "thursday"
+      ],
+      "name": "marceloL",
+      "email": "marcelol@marcelol.com",
+      "password": "g73hi3",
+      "id": 11
     }
   ],
   "events": [
@@ -354,6 +370,24 @@
       "user_id": 7,
       "week_day": "Wednesday",
       "id": 23
+    },
+    {
+      "name": "testeResposivo",
+      "address": "Rua Holanda, 662, 662",
+      "date": "1579143600",
+      "day_shift": "afternoon",
+      "user_id": 6,
+      "week_day": "Thursday",
+      "id": 24
+    },
+    {
+      "name": "testela",
+      "address": "Rua Holanda, 662, 662",
+      "date": "1578366000",
+      "day_shift": "morning",
+      "user_id": 6,
+      "week_day": "Tuesday",
+      "id": 25
     }
   ]
 }

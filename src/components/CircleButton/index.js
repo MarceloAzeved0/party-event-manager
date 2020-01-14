@@ -6,7 +6,7 @@ export const CircleButton = styled.button`
   align-items: center;
   line-height: 25px;
   width: 65px;
-  height: 62px;
+  height: 65px;
   margin-right: 7px;
 
   color: #ffffff;

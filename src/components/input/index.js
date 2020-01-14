@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { Input as InputRock } from '@rocketseat/unform';
 
 export const Input = styled(InputRock)`
-  width: ${props => (props.width ? `${props.width}px` : '490px')};
-  height: ${props => (props.height ? `${props.height}px` : '60px')};
+  width: ${props => (props.width ? `${props.width}px` : '34vw')};
+  height: ${props => (props.height ? `${props.height}px` : '5.8vh')};
   font-family: Quicksand;
   font-style: normal;
   font-weight: normal;

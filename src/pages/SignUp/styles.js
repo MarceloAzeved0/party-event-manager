@@ -9,16 +9,14 @@ export const ContentCol = styled.div`
   /* background-color: #000000; */
   display: flex;
   flex-direction: column;
-  width: 54%;
-  height: 94%;
 `;
 
 export const Content = styled.div`
   /* background-color: #000000; */
   display: flex;
-  margin-top: 34px;
+  margin-top: 3.26vh;
   margin-bottom: 10px;
-  margin-left: 49px;
+  margin-left: 3.4vw;
   flex-direction: row;
 `;
 
@@ -26,8 +24,8 @@ export const Title = styled.p`
   font-family: Quicksand;
   font-style: normal;
   font-weight: normal;
-  font-size: 36px;
-  line-height: 45px;
+  font-size: 3vh;
+  line-height: 4.5vh;
 
   color: #565656;
 `;
@@ -43,10 +41,10 @@ export const ContentLabel = styled.div`
 `;
 
 export const ContentInput = styled.div`
-  height: 200px;
+  height: 19.23vh;
   margin-top: 10px;
   margin-bottom: 10px;
-  margin-left: 49px;
+  margin-left: 3.4vw;
   display: flex;
   flex-direction: row;
   flex: 1;
@@ -54,9 +52,9 @@ export const ContentInput = styled.div`
 
 export const ContentTitle = styled.div`
   /* background-color: #000000; */
-  height: 200px;
-  margin-top: 96px;
-  margin-left: 49px;
+  height: 19.23vh;
+  margin-top: 9.23vh;
+  margin-left: 3.4vw;
   display: flex;
   flex-direction: row;
   flex: 1;
@@ -76,27 +74,27 @@ export const Form = styled(FormRock)`
 `;
 
 export const ContentButton = styled.div`
-  height: 200px;
-  margin-top: 54px;
+  height: 19.23vh;
+  margin-top: 5.19vh;
   margin-bottom: 10px;
-  margin-left: 49px;
+  margin-left: 3.4vw;
   display: flex;
   flex-direction: row;
   flex: 1;
 `;
 
 export const ButtonShiftDay = styled.button`
-  width: 155px;
-  height: 65px;
+  width: 10.76vw;
+  height: 6.25vh;
   background: ${props => (props.active ? '#f097ce' : '#eeeeee')};
-  margin-right: 19px;
+  margin-right: 1.31vw;
   border-radius: 5px;
   p {
     font-family: Quicksand;
     font-style: normal;
     font-weight: bold;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
     text-align: center;
 
     color: #ffffff;
@@ -107,16 +105,14 @@ export const ButtonLogin = styled.button`
   font-family: Quicksand;
   font-style: normal;
   font-weight: normal;
-  font-size: 20px;
-  line-height: 25px;
+  font-size: 2rem;
+  line-height: 2.5rem;
   text-align: center;
 
   color: #ffffff;
 
-  width: 490px;
-  height: 70px;
-  left: 720px;
-  top: 545px;
+  width: 34vw;
+  height: 6.7vh;
 
   background: linear-gradient(104.06deg, #f180c1 4.55%, #a450c9 95.79%);
   border-radius: 5px;
