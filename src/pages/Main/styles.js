@@ -15,6 +15,8 @@ export const ContainerCol = styled.div`
   @media (max-width: 671px) {
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
   }
 `;
 

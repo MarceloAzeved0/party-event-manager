@@ -9,6 +9,13 @@ export const ContentCol = styled.div`
   /* background-color: #000000; */
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 671px) {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const Content = styled.div`
