@@ -125,9 +125,15 @@ export default function Schedule() {
         <ContentAvailable>
           {working && workingShift ? (
             eventShiftMarked ? (
-              <BoxEvent bold>
-                <TextEvent>{eventSelected.name}</TextEvent>
-                <TextEvent>{eventSelected.address}</TextEvent>
+              <BoxEvent>
+                <ColumnContent>
+                  <Content>
+                    <TextEvent bold>{eventSelected.name}</TextEvent>
+                  </Content>
+                  <Content>
+                    <TextEvent>{eventSelected.address}</TextEvent>
+                  </Content>
+                </ColumnContent>
               </BoxEvent>
             ) : (
               <Available />
@@ -240,13 +246,13 @@ export default function Schedule() {
             <Label>Nome do Evento</Label>
           </Content>
           <Content>
-            <Input type="text" name="name" />
+            <Input type="text" name="name" autocomplete="off" />
           </Content>
           <Content>
             <Label>Local</Label>
           </Content>
           <Content>
-            <Input type="text" name="address" />
+            <Input type="text" name="address" autocomplete="off" />
           </Content>
           <ContentLabel>
             <DivColumn>

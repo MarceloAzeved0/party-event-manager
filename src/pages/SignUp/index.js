@@ -44,19 +44,19 @@ export default function SignUp({ history }) {
             <Label>Qual o seu nome?</Label>
           </ContentLabel>
           <ContentInput>
-            <Input name="name" type="text" />
+            <Input name="name" type="text" autocomplete="off" />
           </ContentInput>
           <ContentLabel>
             <Label>E seu e-mail?</Label>
           </ContentLabel>
           <ContentInput>
-            <Input name="email" type="email" />
+            <Input name="email" type="email" autocomplete="off" />
           </ContentInput>
           <ContentLabel>
             <Label>Crie uma senha</Label>
           </ContentLabel>
           <ContentInput>
-            <Input name="password" type="password" />
+            <Input name="password" type="password" autocomplete="off" />
           </ContentInput>
           <ContentButton>
             <ButtonLogin type="submit">Avançar</ButtonLogin>
