@@ -11,6 +11,7 @@ import {
   ContentTitle,
   ContentLine,
   ContentLabel,
+  Input,
   ContentInput,
   ContentButton,
   ButtonLogin,
@@ -20,7 +21,6 @@ import {
   Line,
   Form,
 } from './styles';
-import { Input } from '../../components/input';
 import { Label } from '../../components/label';
 import { Creators } from '../../store/ducks/modules/user';
 
@@ -61,22 +61,22 @@ export default function SignIn() {
           <ContentButton>
             <ButtonLogin type="submit">Entrar</ButtonLogin>
           </ContentButton>
-        </Form>
 
-        <Content>
-          <ForgotPassword>Esqueci minha senha</ForgotPassword>
-        </Content>
-        <ContentLine>
-          <Line />
-        </ContentLine>
-        <Content>
-          <NoHaveAccount>Não possui uma conta?</NoHaveAccount>
-        </Content>
-        <Content>
-          <Link to="register">
-            <CreateAccount>Criar Conta</CreateAccount>
-          </Link>
-        </Content>
+          <Content>
+            <ForgotPassword>Esqueci minha senha</ForgotPassword>
+          </Content>
+          <ContentLine>
+            <Line />
+          </ContentLine>
+          <Content>
+            <NoHaveAccount>Não possui uma conta?</NoHaveAccount>
+          </Content>
+          <Content>
+            <Link to="register">
+              <CreateAccount>Criar Conta</CreateAccount>
+            </Link>
+          </Content>
+        </Form>
       </ContentCol>
     </Container>
   );

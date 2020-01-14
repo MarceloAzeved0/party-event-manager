@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Label = styled.p`
-  height: 25px;
+  height: 20px;
 
   font-family: Quicksand;
   font-style: normal;

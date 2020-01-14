@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Form as FormRock } from '@rocketseat/unform';
+import { Form as FormRock, Input as InputRock } from '@rocketseat/unform';
 
 export const Container = styled.div`
   display: flex;
@@ -15,6 +15,7 @@ export const ContentCol = styled.div`
   height: 94%;
 
   @media (max-width: 671px) {
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -37,6 +38,10 @@ export const ContentTitle = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1;
+  @media (max-width: 671px) {
+    margin-right: 9.6vw;
+    margin-left: 9.6vw;
+  }
 `;
 
 export const Title = styled.p`
@@ -47,6 +52,12 @@ export const Title = styled.p`
   line-height: 4vh;
 
   color: #565656;
+
+  @media (max-width: 671px) {
+    color: #ffffff;
+    font-size: 3rem;
+    line-height: 3.7rem;
+  }
 `;
 
 export const ContentLabel = styled.div`
@@ -57,6 +68,32 @@ export const ContentLabel = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1;
+
+  @media (max-width: 671px) {
+    margin-bottom: 0vh;
+    margin-top: 5.25vh;
+    margin-left: 9.6vw;
+  }
+`;
+
+export const Input = styled(InputRock)`
+  width: ${props => (props.width ? `${props.width}px` : '34vw')};
+  height: ${props => (props.height ? `${props.height}px` : '5.8vh')};
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  padding: 12px;
+
+  border: 1px solid #cccccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: #ee7ec2;
+  @media (max-width: 671px) {
+    margin-top: 0.5vh;
+    height: 5.6vh;
+    width: 72.26vw;
+  }
 `;
 
 export const ContentInput = styled.div`
@@ -67,6 +104,13 @@ export const ContentInput = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1;
+
+  @media (max-width: 671px) {
+    margin-top: 0.5vh;
+    margin-left: 9.6vw;
+    height: 5.6vh;
+    width: 72.26vw;
+  }
 `;
 
 export const ContentButton = styled.div`
@@ -77,6 +121,14 @@ export const ContentButton = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1;
+
+  @media (max-width: 671px) {
+    justify-content: center;
+    width: 72.26vw;
+    height: 7.6vh;
+    margin-right: 9.6vw;
+    margin-left: 9.6vw;
+  }
 `;
 
 export const ButtonLogin = styled.button`
@@ -94,6 +146,10 @@ export const ButtonLogin = styled.button`
 
   background: linear-gradient(104.06deg, #f180c1 4.55%, #a450c9 95.79%);
   border-radius: 5px;
+  @media (max-width: 671px) {
+    width: 72.26vw;
+    height: 7.6vh;
+  }
 `;
 
 export const ForgotPassword = styled.p`
@@ -108,6 +164,11 @@ export const ForgotPassword = styled.p`
   text-align: center;
 
   color: #9d9b9b;
+
+  @media (max-width: 671px) {
+    margin-left: 44.2vw;
+    margin-top: 2vh;
+  }
 `;
 
 export const CreateAccount = styled.p`
@@ -122,6 +183,12 @@ export const CreateAccount = styled.p`
   text-align: center;
 
   color: #ed7ec2;
+  @media (max-width: 671px) {
+    margin-right: 9.6vw;
+    margin-left: 9.6vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+  }
 `;
 
 export const Line = styled.div`
@@ -129,6 +196,14 @@ export const Line = styled.div`
   height: 0px;
 
   border: 1px solid #cccccc;
+
+  @media (max-width: 671px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4vw;
+    width: 80vw;
+  }
 `;
 
 export const ContentLine = styled.div`
@@ -138,6 +213,10 @@ export const ContentLine = styled.div`
   margin-left: 3.1vw;
   height: 0px;
   flex: 1;
+
+  @media (max-width: 671px) {
+    margin-top: 8.5vh;
+  }
 `;
 
 export const NoHaveAccount = styled.p`
@@ -152,6 +231,12 @@ export const NoHaveAccount = styled.p`
   text-align: center;
 
   color: #565656;
+
+  @media (max-width: 671px) {
+    margin-right: 9.6vw;
+    margin-left: 9.6vw;
+    margin-top: 3.4vh;
+  }
 `;
 
 export const Form = styled(FormRock)`
@@ -164,5 +249,14 @@ export const Form = styled(FormRock)`
     flex-direction: row;
     flex: 1;
     color: #ff0000;
+  }
+  @media (max-width: 671px) {
+    padding-top: 5vh;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.17);
+    border-radius: 5px;
+    width: 91.73vw;
+    height: 77.8vh;
+    margin-top: 4.49vh;
   }
 `;
