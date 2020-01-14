@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
@@ -9,12 +10,18 @@ import {
   ContentButton,
   ContentLabel,
   ContentInput,
+  ContentBottom,
+  ContentLine,
   Title,
+  Line,
+  ForgotPassword,
+  Input,
   Form,
   ButtonLogin,
+  CreateAccount,
+  NoHaveAccount,
 } from './styles';
 import SideImageJoker from '../../components/SideImageJoker';
-import { Input } from '../../components/input';
 import { Label } from '../../components/label';
 import { Creators } from '../../store/ducks/modules/user';
 
@@ -61,6 +68,20 @@ export default function SignUp({ history }) {
           <ContentButton>
             <ButtonLogin type="submit">Avançar</ButtonLogin>
           </ContentButton>
+          <ContentBottom>
+            <ForgotPassword>Esqueci minha senha</ForgotPassword>
+          </ContentBottom>
+          <ContentLine>
+            <Line />
+          </ContentLine>
+          <ContentBottom>
+            <NoHaveAccount>Já possui uma conta?</NoHaveAccount>
+          </ContentBottom>
+          <ContentBottom>
+            <Link to="login">
+              <CreateAccount>Entrar</CreateAccount>
+            </Link>
+          </ContentBottom>
         </Form>
       </ContentCol>
     </Container>

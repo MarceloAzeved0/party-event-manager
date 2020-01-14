@@ -195,7 +195,7 @@ export const CreateAccount = styled.p`
 `;
 
 export const Line = styled.div`
-  width: 516px;
+  width: 35.8vw;
   height: 0px;
 
   border: 1px solid #cccccc;
