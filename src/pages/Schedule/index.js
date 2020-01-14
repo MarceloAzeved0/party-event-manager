@@ -26,6 +26,7 @@ import {
   ScheduleWeek,
   ColumnContent,
   Form,
+  TextEvent,
   ContentAvailable,
   RightImage,
   LeftImage,
@@ -101,6 +102,7 @@ export default function Schedule() {
   const listEvents = (working, eventsMarked) => {
     const dayShift = ['morning', 'afternoon', 'night'];
     const lines = [];
+    let eventSelected = {};
     let eventShiftMarked = false;
     let workingShift = false;
     for (let i = 0; i < 3; i++) {
@@ -111,6 +113,7 @@ export default function Schedule() {
         if (eventsMarked && eventsMarked.length) {
           for (const element of eventsMarked) {
             if (element.day_shift === dayShift[i]) {
+              eventSelected = element;
               eventShiftMarked = true;
               break;
             }
@@ -122,7 +125,10 @@ export default function Schedule() {
         <ContentAvailable>
           {working && workingShift ? (
             eventShiftMarked ? (
-              <BoxEvent />
+              <BoxEvent bold>
+                <TextEvent>{eventSelected.name}</TextEvent>
+                <TextEvent>{eventSelected.address}</TextEvent>
+              </BoxEvent>
             ) : (
               <Available />
             )

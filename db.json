@@ -330,6 +330,15 @@
       "user_id": 3,
       "week_day": "Tuesday",
       "id": 22
+    },
+    {
+      "name": "marcelo festa",
+      "address": "casa do marcelo",
+      "date": "1579057200",
+      "day_shift": "morning",
+      "user_id": 7,
+      "week_day": "Wednesday",
+      "id": 23
     }
   ]
 }

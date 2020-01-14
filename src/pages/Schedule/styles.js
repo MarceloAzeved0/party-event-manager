@@ -314,9 +314,24 @@ export const SelectDayShift = styled(Select)`
   }
 `;
 
+export const TextEvent = styled.p`
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: ${props => (props.bold ? 'bold' : '')};
+  font-size: 16px;
+  line-height: 20px;
+
+  color: #ffffff;
+`;
+
 export const BoxEvent = styled.div`
   width: 120px;
   height: 156px;
   background: #f5a7d4;
   border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 `;
