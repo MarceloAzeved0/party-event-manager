@@ -29,8 +29,8 @@ export const ContentLine = styled.div`
 `;
 
 export const ButtonSignIn = styled.button`
-  width: 218px;
-  height: 60px;
+  width: 15.1vw;
+  height: 5.76vh;
   margin-right: 2.7vw;
   background: #e77cca;
   border-radius: 5px;
@@ -38,8 +38,8 @@ export const ButtonSignIn = styled.button`
   font-family: Quicksand;
   font-style: normal;
   font-weight: normal;
-  font-size: 20px;
-  line-height: 25px;
+  font-size: 2rem;
+  line-height: 2.5rem;
   /* identical to box height */
 
   text-align: center;
@@ -48,14 +48,14 @@ export const ButtonSignIn = styled.button`
 `;
 
 export const LinkSignUp = styled.a`
-  width: 103px;
-  height: 25px;
+  width: 7.15vw;
+  height: 2.4vh;
 
   font-family: Quicksand;
   font-style: normal;
   font-weight: normal;
-  font-size: 20px;
-  line-height: 25px;
+  font-size: 2rem;
+  line-height: 2.5rem;
   /* identical to box height */
 
   text-align: center;
@@ -101,8 +101,6 @@ export const ContentTitle = styled.div`
   /* background-color: #000000; */
   margin-left: 3.1vw;
   margin-top: 9.23vh;
-  width: 40vw;
-  height: 6.25vh;
   display: flex;
   flex-direction: row;
   flex: 1;
@@ -111,8 +109,8 @@ export const Title = styled.p`
   font-family: Quicksand;
   font-style: normal;
   font-weight: normal;
-  font-size: 36px;
-  line-height: 45px;
+  font-size: 3vh;
+  line-height: 4.5rem;
   color: #565656;
 `;
 
@@ -124,21 +122,19 @@ export const Line = styled.div`
 `;
 
 export const ImgIcon = styled.img`
-  margin-left: 27px;
+  margin-left: 1.8vw;
 `;
 
 export const TextCard = styled.p`
-  width: 341px;
-  height: 65px;
-  margin-top: 48px;
-  margin-right: 43px;
-  margin-bottom: 20px;
-  margin-left: 41px;
+  margin-top: 4.6vh;
+  margin-right: 2.98vw;
+  margin-bottom: 1.9vh;
+  margin-left: 2.84vw;
   font-family: Quicksand;
   font-style: normal;
   font-weight: normal;
-  font-size: 20px;
-  line-height: 25px;
+  font-size: 2vh;
+  line-height: 2rem;
 
   color: #848484;
 `;
@@ -146,8 +142,9 @@ export const TextCard = styled.p`
 export const Card = styled.div`
   display: flex;
   flex-direction: row;
-  width: 512px;
-  height: 141px;
+  width: 35.55vw;
+  height: 13.55vh;
+  min-width: 360px;
 
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
@@ -158,9 +155,9 @@ export const CardParty = styled.div`
   /* Rectangle 58 */
   display: flex;
   flex-direction: row;
-
-  width: 512px;
-  height: 141px;
+  min-width: 360px;
+  width: 35.55vw;
+  height: 13.55vh;
 
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
@@ -171,8 +168,8 @@ export const TextFooter = styled.p`
   font-family: Quicksand;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 2vh;
+  line-height: 2.2vh;
   /* identical to box height */
 
   text-align: center;
@@ -183,6 +180,6 @@ export const TextFooter = styled.p`
 export const ContentTriider = styled.div`
   margin-top: 13.7vh;
   margin-left: 3.88vw;
-  width: 14.3vw;
-  height: 2.2vh;
+  display: flex;
+  flex: 1;
 `;

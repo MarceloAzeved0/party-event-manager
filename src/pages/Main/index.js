@@ -49,10 +49,7 @@ export default function Main() {
         <ContentCard>
           <Card>
             <ImgIcon src={Balloon} alt="balloon" />
-            <TextCard>
-              Cadastre suas festas e organize <br />
-              sua Agenda!
-            </TextCard>
+            <TextCard>Cadastre suas festas e organize sua Agenda!</TextCard>
           </Card>
         </ContentCard>
         <ContentCardParty>
