@@ -7,6 +7,10 @@ export const HeaderCont = styled.header`
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
+
+  @media (max-width: 671px) {
+    display: none;
+  }
 `;
 
 export const Container = styled.div`

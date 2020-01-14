@@ -4,7 +4,7 @@ import { Form as FormRock, Select } from '@rocketseat/unform';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: ${props => (props.modalIsOpen ? 'rgba(0, 0, 0, 0.5)' : '')};
+  background-color: ${props => (props.modalIsOpen ? 'opacity 0.5' : '')};
 `;
 export const Form = styled(FormRock)`
   display: flex;

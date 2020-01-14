@@ -50,17 +50,19 @@ export const ButtonSignIn = styled.button`
   line-height: 2.5rem;
   /* identical to box height */
 
-  text-align: center;
-
   color: #ffffff;
 
   @media (max-width: 671px) {
+    background-color: Transparent;
     flex-direction: column;
-    width: 20.7vh;
+    height: 8.9vh;
+    width: 79.5vw;
     margin-bottom: 1.9vh;
-    text-align: center;
-    margin-left: 2.7vw;
-    margin-right: 2.7vw;
+    margin-left: 10.1vw;
+    margin-right: 10.1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -75,9 +77,21 @@ export const LinkSignUp = styled.a`
   line-height: 2.5rem;
   /* identical to box height */
 
-  text-align: center;
-
   color: #e77cca;
+
+  @media (max-width: 671px) {
+    background: #ffffff;
+    border-radius: 5px;
+    height: 8.9vh;
+    flex-direction: column;
+    width: 79.5vw;
+    margin-bottom: 1.9vh;
+    margin-left: 10.1vw;
+    margin-right: 10.1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const ContentCard = styled.div`
@@ -87,6 +101,9 @@ export const ContentCard = styled.div`
   width: 35.55vw;
   margin-top: 9.2vh;
   margin-left: 3.4vw;
+  @media (max-width: 671px) {
+    display: none;
+  }
 `;
 
 export const ContentCardParty = styled.div`
@@ -96,6 +113,9 @@ export const ContentCardParty = styled.div`
   width: 35.55vw;
   margin-top: 2.2vh;
   margin-left: 3.4vw;
+  @media (max-width: 671px) {
+    display: none;
+  }
 `;
 
 export const ContentButton = styled.div`
@@ -108,7 +128,10 @@ export const ContentButton = styled.div`
 
   @media (max-width: 671px) {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     flex: 1;
+    margin-top: 37vh;
   }
 `;
 
@@ -130,6 +153,7 @@ export const ContentTitle = styled.div`
   @media (max-width: 671px) {
     justify-content: center;
     align-items: center;
+    margin-top: 16.4vh;
   }
 `;
 export const Title = styled.p`
@@ -153,6 +177,8 @@ export const Line = styled.div`
 
   @media (max-width: 671px) {
     display: none;
+    width: 0px;
+    height: 0px;
   }
 `;
 
@@ -215,9 +241,12 @@ export const TextFooter = styled.p`
   line-height: 2.2vh;
   /* identical to box height */
 
-  text-align: center;
-
   color: #565656;
+  @media (max-width: 671px) {
+    color: #ffffff;
+    font-size: 2rem;
+    line-height: 2.2rem;
+  }
 `;
 
 export const ContentTriider = styled.div`
@@ -225,4 +254,11 @@ export const ContentTriider = styled.div`
   margin-left: 3.88vw;
   display: flex;
   flex: 1;
+
+  @media (max-width: 671px) {
+    display: flex;
+    flex: 1;
+    margin-top: 3vh;
+    flex-direction: row;
+  }
 `;
