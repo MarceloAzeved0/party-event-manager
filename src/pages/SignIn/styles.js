@@ -105,7 +105,10 @@ export const ContentInput = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1;
-
+  span {
+    color: red;
+    font-size: 2rem;
+  }
   @media (max-width: 671px) {
     margin-top: 0.5vh;
     margin-left: 9.6vw;
@@ -244,12 +247,6 @@ export const Form = styled(FormRock)`
   flex-flow: column;
   height: 100%;
   width: 100%;
-  span {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-    color: #ff0000;
-  }
   @media (max-width: 671px) {
     padding-top: 5vh;
     background-color: #ffffff;
@@ -258,11 +255,5 @@ export const Form = styled(FormRock)`
     width: 91.73vw;
     height: 77.8vh;
     margin-top: 4.49vh;
-    span {
-      display: flex;
-      flex-direction: row;
-      flex: 1;
-      color: #ff0000;
-    }
   }
 `;
