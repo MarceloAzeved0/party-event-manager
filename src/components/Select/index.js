@@ -5,8 +5,9 @@ export const Select = styled(SelectRock)`
   border: 1px solid #cccccc;
   box-sizing: border-box;
   border-radius: 5px;
-  width: 34.8vw;
+  width: ${props => (props.width ? props.width : '34.8vw')};
   height: 5.77vh;
+  max-width: 36.8vw;
   padding: 1.2rem;
 
   font-family: Quicksand;

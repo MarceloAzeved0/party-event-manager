@@ -120,6 +120,11 @@ export const Content = styled.div`
   margin-bottom: 10px;
   margin-left: 3.4vw;
   flex-direction: row;
+
+  @media (max-width: 671px) {
+    margin-bottom: 0px;
+    margin-left: 9.6vw;
+  }
 `;
 
 export const Title = styled.p`
@@ -252,6 +257,10 @@ export const ButtonShiftDay = styled.button`
     text-align: center;
 
     color: #ffffff;
+  }
+  @media (max-width: 671px) {
+    height: 5.9vh;
+    width: 22.4vw;
   }
 `;
 

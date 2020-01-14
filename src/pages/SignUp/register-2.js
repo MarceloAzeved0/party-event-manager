@@ -13,9 +13,9 @@ import {
   ButtonShiftDay,
   ButtonLogin,
   Form,
+  Input,
 } from './styles';
 import SideImageJoker from '../../components/SideImageJoker';
-import { Input } from '../../components/input';
 import { Label } from '../../components/label';
 import { Select } from '../../components/Select';
 import { CircleButton } from '../../components/CircleButton';
@@ -63,7 +63,7 @@ export default function Register2() {
             <Label>Selecione sua categoria</Label>
           </ContentLabel>
           <ContentInput>
-            <Select name="category" options={Categories} />
+            <Select width="72.2vw" name="category" options={Categories} />
           </ContentInput>
           <ContentLabel>
             <Label>Selecione os dias que trabalhará:</Label>

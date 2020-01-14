@@ -25,7 +25,10 @@ export const CircleButton = styled.button`
     text-align: center;
     font-weight: bold;
     font-size: 20px;
-    width: 17px;
-    height: 29px;
+  }
+
+  @media (max-width: 671px) {
+    width: 40px;
+    height: 40px;
   }
 `;
