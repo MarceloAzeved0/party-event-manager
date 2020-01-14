@@ -12,9 +12,10 @@ export default createGlobalStyle`
   }
 
   html, body, #root {
-    font-size: 62.5%; /*1 rem = 10px;*/
+    font-size: 62.5%;
     max-height: 100vh;
     min-height: 100vh;
+    text-decoration: none;
     /* max-width: 1440px; */
     /* max-height: 1024px; */
   }

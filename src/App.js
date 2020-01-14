@@ -1,4 +1,5 @@
 import React from 'react';
+import { css } from 'glamor';
 import { ToastContainer } from 'react-toastify';
 import { Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -18,7 +19,12 @@ function App() {
       <Router history={history}>
         <Routes />
         <GlobalStyle />
-        <ToastContainer autoClose={3000} />
+        <ToastContainer
+          className={css({
+            fontSize: '2rem',
+          })}
+          autoClose={3000}
+        />
       </Router>
     </Provider>
   );

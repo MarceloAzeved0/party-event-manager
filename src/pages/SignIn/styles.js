@@ -38,6 +38,7 @@ export const ContentTitle = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1;
+
   @media (max-width: 671px) {
     margin-right: 9.6vw;
     margin-left: 9.6vw;
@@ -108,8 +109,7 @@ export const ContentInput = styled.div`
   @media (max-width: 671px) {
     margin-top: 0.5vh;
     margin-left: 9.6vw;
-    height: 5.6vh;
-    width: 72.26vw;
+    height: 6.6vh;
   }
 `;
 
@@ -258,5 +258,11 @@ export const Form = styled(FormRock)`
     width: 91.73vw;
     height: 77.8vh;
     margin-top: 4.49vh;
+    span {
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+      color: #ff0000;
+    }
   }
 `;
