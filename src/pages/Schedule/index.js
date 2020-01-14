@@ -46,8 +46,10 @@ const customStyles = {
   content: {
     top: '50%',
     left: '50%',
-    width: '567px',
-    height: '829px',
+    width: '39.3vw',
+    height: '79.7vh',
+    maxWidth: '567px',
+    maxHeight: '829px',
     right: 'auto',
     bottom: 'auto',
     marginRight: '-50%',

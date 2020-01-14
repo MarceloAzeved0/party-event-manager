@@ -145,6 +145,21 @@
       "email": "marcelo@marcelo.com",
       "password": "marcelo",
       "id": 9
+    },
+    {
+      "category": "Selecione...",
+      "price": "400",
+      "day_shift": [
+        "morning"
+      ],
+      "week_days": [
+        "monday",
+        "tuesday"
+      ],
+      "name": "marceloTete",
+      "email": "marceloTete@marceloTete.com",
+      "password": "marceloTete",
+      "id": 10
     }
   ],
   "events": [

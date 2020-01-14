@@ -2,20 +2,36 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: row;
+`;
+
+export const ContainerCol = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 54%;
+  height: 94%;
 `;
 
 export const ContainerButtons = styled.div`
+  width: 15vw;
+  height: 5.76vh;
   display: flex;
   flex-direction: column;
 `;
 
+export const ContentLine = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 6.9vh;
+  margin-left: 3.1vw;
+  height: 0px;
+  flex: 1;
+`;
+
 export const ButtonSignIn = styled.button`
-  position: absolute;
   width: 218px;
   height: 60px;
-  left: 716px;
-  top: 302px;
-
+  margin-right: 2.7vw;
   background: #e77cca;
   border-radius: 5px;
 
@@ -32,11 +48,8 @@ export const ButtonSignIn = styled.button`
 `;
 
 export const LinkSignUp = styled.a`
-  position: absolute;
   width: 103px;
   height: 25px;
-  left: 974px;
-  top: 319px;
 
   font-family: Quicksand;
   font-style: normal;
@@ -50,20 +63,51 @@ export const LinkSignUp = styled.a`
   color: #e77cca;
 `;
 
+export const ContentCard = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 13.5vh;
+  width: 35.55vw;
+  margin-top: 9.2vh;
+  margin-left: 3.4vw;
+`;
+
+export const ContentCardParty = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 13.5vh;
+  width: 35.55vw;
+  margin-top: 2.2vh;
+  margin-left: 3.4vw;
+`;
+
+export const ContentButton = styled.div`
+  width: 50vw;
+  height: 5.9vh;
+  display: flex;
+  flex-direction: row;
+  margin-top: 7.78vh;
+  margin-left: 3.12vw;
+`;
+
 export const Content = styled.div`
   /* background-color: #000000; */
   display: flex;
-  flex-direction: column;
-  width: 54%;
-  height: 94%;
+  flex-direction: row;
+  flex: 1;
 `;
 
+export const ContentTitle = styled.div`
+  /* background-color: #000000; */
+  margin-left: 3.1vw;
+  margin-top: 9.23vh;
+  width: 40vw;
+  height: 6.25vh;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+`;
 export const Title = styled.p`
-  left: 716px;
-  top: 156px;
-  width: 578px;
-  height: 65px;
-  position: absolute;
   font-family: Quicksand;
   font-style: normal;
   font-weight: normal;
@@ -73,27 +117,19 @@ export const Title = styled.p`
 `;
 
 export const Line = styled.div`
-  position: absolute;
   width: 516px;
   height: 0px;
-  left: 716px;
-  top: 434px;
 
   border: 1px solid #cccccc;
 `;
 
 export const ImgIcon = styled.img`
   margin-left: 27px;
-  right: 41px;
-  top: 34px;
-  bottom: 20px;
 `;
 
 export const TextCard = styled.p`
   width: 341px;
   height: 65px;
-  left: 848px;
-  top: 578px;
   margin-top: 48px;
   margin-right: 43px;
   margin-bottom: 20px;
@@ -110,11 +146,8 @@ export const TextCard = styled.p`
 export const Card = styled.div`
   display: flex;
   flex-direction: row;
-  position: absolute;
   width: 512px;
   height: 141px;
-  left: 720px;
-  top: 530px;
 
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
@@ -126,11 +159,8 @@ export const CardParty = styled.div`
   display: flex;
   flex-direction: row;
 
-  position: absolute;
   width: 512px;
   height: 141px;
-  left: 720px;
-  top: 694px;
 
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
@@ -138,12 +168,6 @@ export const CardParty = styled.div`
 `;
 
 export const TextFooter = styled.p`
-  position: absolute;
-  width: 206px;
-  height: 23px;
-  left: 727px;
-  top: 982px;
-
   font-family: Quicksand;
   font-style: normal;
   font-weight: normal;
@@ -154,4 +178,11 @@ export const TextFooter = styled.p`
   text-align: center;
 
   color: #565656;
+`;
+
+export const ContentTriider = styled.div`
+  margin-top: 13.7vh;
+  margin-left: 3.88vw;
+  width: 14.3vw;
+  height: 2.2vh;
 `;

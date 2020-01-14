@@ -6,9 +6,15 @@ import SideImageJoker from '../../components/SideImageJoker';
 
 import {
   Container,
+  ContainerCol,
+  ContentCard,
+  ContentCardParty,
   Content,
+  ContentTriider,
   Title,
-  ContainerButtons,
+  ContentButton,
+  ContentTitle,
+  ContentLine,
   ButtonSignIn,
   LinkSignUp,
   Line,
@@ -23,36 +29,45 @@ export default function Main() {
   return (
     <Container>
       <SideImageJoker />
-      <Content>
-        <Title>
-          Gerenciador de eventos <br /> para animadores de festas
-        </Title>
-        <ContainerButtons>
+      <ContainerCol>
+        <ContentTitle>
+          <Title>
+            Gerenciador de eventos <br /> para animadores de festas
+          </Title>
+        </ContentTitle>
+        <ContentButton>
           <Link to="login">
             <ButtonSignIn>Entrar</ButtonSignIn>
           </Link>
           <Link to="register">
             <LinkSignUp>Criar conta</LinkSignUp>
           </Link>
-        </ContainerButtons>
-        <Line />
-        <Card>
-          <ImgIcon src={Balloon} alt="balloon" />
-          <TextCard>
-            Cadastre suas festas e organize <br />
-            sua Agenda!
-          </TextCard>
-        </Card>
-        <CardParty>
-          <ImgIcon src={Party} alt="party" />
-          <TextCard>
-            Informe sua disponibilidade de dias e horários e crie um calendário
-            personalizado
-          </TextCard>
-        </CardParty>
-
-        <TextFooter>Desafio Front end Triider</TextFooter>
-      </Content>
+        </ContentButton>
+        <ContentLine>
+          <Line />
+        </ContentLine>
+        <ContentCard>
+          <Card>
+            <ImgIcon src={Balloon} alt="balloon" />
+            <TextCard>
+              Cadastre suas festas e organize <br />
+              sua Agenda!
+            </TextCard>
+          </Card>
+        </ContentCard>
+        <ContentCardParty>
+          <CardParty>
+            <ImgIcon src={Party} alt="party" />
+            <TextCard>
+              Informe sua disponibilidade de dias e horários e crie um
+              calendário personalizado
+            </TextCard>
+          </CardParty>
+        </ContentCardParty>
+        <ContentTriider>
+          <TextFooter>Desafio Front end Triider</TextFooter>
+        </ContentTriider>
+      </ContainerCol>
     </Container>
   );
 }

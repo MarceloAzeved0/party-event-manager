@@ -26,10 +26,10 @@ export const ContentTitle = styled.div`
 `;
 
 export const ContentInput = styled.div`
-  height: 200px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 49px;
+  height: 19.2vh;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 3.4vw;
   display: flex;
   flex-direction: row;
   flex: 1;
@@ -39,36 +39,37 @@ export const MonthTitle = styled.h1`
   font-family: Quicksand;
   font-style: normal;
   font-weight: bold;
-  font-size: 30px;
-  line-height: 37px;
-  margin-left: 160px;
-  margin-top: 73px;
-  margin-bottom: 30px;
+  font-size: 3rem;
+  line-height: 3.7rem;
+  margin-left: 11vw;
+  margin-top: 7vh;
+  margin-bottom: 2.8vh;
   /* identical to box height */
 
   text-align: center;
 
-  width: 152px;
-  height: 38px;
+  width: 10vw;
+  height: 3.6vh;
 
   color: #565656;
 `;
 
 export const NewEvent = styled.button`
-  width: 207px;
-  height: 50px;
+  width: 14.3vw;
+  min-width: 122px;
+  height: 4.8vh;
   background: #f180c1;
   border-radius: 5px;
-  margin-right: 170px;
-  margin-top: 75px;
-  margin-bottom: 32px;
+  margin-right: 11.8vw;
+  margin-top: 7.2vh;
+  margin-bottom: 3.1vh;
 
   p {
     font-family: Quicksand;
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 2rem;
+    line-height: 2.5rem;
     /* identical to box height */
 
     text-align: center;
@@ -87,16 +88,17 @@ export const ScheduleWeek = styled.div`
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  width: 1110px;
-  height: 708px;
+  width: 77vw;
+  min-height: 550px;
+  height: 68vh;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
 `;
 
 export const SideSchedule = styled.div`
-  width: 80px;
-  height: 708px;
+  width: 5.5vw;
+  height: 68vh;
   background: #ffffff;
   margin-right: -10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
@@ -114,27 +116,27 @@ export const SideSchedule = styled.div`
 `;
 
 export const RightImage = styled.button`
-  margin-left: -70px;
+  margin-left: -4.8vw;
 `;
 
 export const LeftImage = styled.button`
-  margin-right: -70px;
+  margin-right: -4.8vw;
 `;
 export const ColumnContent = styled.div`
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
-  width: 100%;
+  width: 100vh;
   align-items: center;
   /* flex: 1; */
 `;
 
 export const CircleDay = styled.div`
   background: #f5a7d4;
-  width: 53px;
-  height: 58px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  margin-top: 26px;
+  margin-top: 2.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -144,8 +146,8 @@ export const CircleDay = styled.div`
     font-family: Quicksand;
     font-style: normal;
     font-weight: bold;
-    font-size: 30px;
-    line-height: 37px;
+    font-size: 3rem;
+    line-height: 3.7rem;
     /* identical to box height */
 
     color: #ffffff;
@@ -154,7 +156,7 @@ export const CircleDay = styled.div`
 
 export const ContentLine = styled.div`
   /* background-color: #000000; */
-  margin-top: 36px;
+  margin-top: 3.2vh;
   margin-bottom: 5px;
   justify-content: center;
   align-items: center;
@@ -166,14 +168,14 @@ export const ContentLine = styled.div`
 export const Content = styled.div`
   /* background-color: #000000; */
   display: flex;
-  margin-top: 34px;
+  margin-top: 3.1vh;
   flex-direction: row;
 `;
 
 export const ContentLabel = styled.div`
   /* background-color: #000000; */
   display: flex;
-  margin-top: 40px;
+  margin-top: 3.8vh;
 
   flex-direction: row;
 `;
@@ -181,7 +183,7 @@ export const DivColumn = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 50%;
+  width: 50vw;
   margin-left: 0px;
 `;
 
@@ -189,8 +191,8 @@ export const Title = styled.p`
   font-family: Quicksand;
   font-style: normal;
   font-weight: normal;
-  font-size: 20px;
-  line-height: 25px;
+  font-size: 2rem;
+  line-height: 2.5rem;
   text-align: center;
   color: #565656;
 `;
@@ -225,8 +227,9 @@ export const ContentAvailable = styled.div`
 export const NotAvailable = styled.div`
   background: rgba(196, 196, 196, 0.3);
   border-radius: 5px;
-  width: 120px;
-  height: 156px;
+  max-width: 156px;
+  width: 8.3vw;
+  height: 15vh;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -235,8 +238,8 @@ export const NotAvailable = styled.div`
     font-family: Quicksand;
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 1.2vh;
+    line-height: 2rem;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -249,8 +252,8 @@ export const NotAvailable = styled.div`
 
 export const Available = styled.div`
   border-radius: 5px;
-  width: 120px;
-  height: 156px;
+  width: 8.3vw;
+  height: 15vh;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -260,26 +263,26 @@ export const TitleModal = styled.h1`
   font-family: Quicksand;
   font-style: normal;
   font-weight: normal;
-  font-size: 30px;
-  line-height: 37px;
+  font-size: 3rem;
+  line-height: 3.7rem;
   text-align: center;
-  margin-bottom: 61px;
+  margin-bottom: 5.85vh;
   color: #f883ba;
 `;
 
 export const AddEvent = styled.button`
   background: linear-gradient(101deg, #f180c1 4.55%, #a450c9 95.79%);
   border-radius: 5px;
-  width: 462px;
-  margin-left: 35px;
-  margin-top: 30px;
-  height: 85px;
+  width: 32.1vw;
+  margin-left: 2.4vw;
+  margin-top: 2.1vw;
+  height: 8.17vh;
   p {
     font-family: Quicksand;
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 2.4rem;
+    line-height: 3rem;
     text-align: center;
 
     color: #ffffff;
@@ -287,8 +290,8 @@ export const AddEvent = styled.button`
 `;
 
 export const SelectDayShift = styled(Select)`
-  width: 225px;
-  height: 68px;
+  width: 15.6vw;
+  height: 6.5vh;
   border: 1px solid #cccccc;
   box-sizing: border-box;
   border-radius: 5px;
@@ -296,9 +299,9 @@ export const SelectDayShift = styled(Select)`
   font-family: Quicksand;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
-  line-height: 20px;
-  padding: 12px;
+  font-size: 1.8rem;
+  line-height: 2rem;
+  padding: 1.2rem;
   text-align: center;
 
   color: #ee7ec2;
@@ -306,8 +309,8 @@ export const SelectDayShift = styled(Select)`
     font-family: Quicksand;
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
     text-align: center;
 
     color: #cccccc;
@@ -318,15 +321,15 @@ export const TextEvent = styled.p`
   font-family: Quicksand;
   font-style: normal;
   font-weight: ${props => (props.bold ? 'bold' : '')};
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 1.6rem;
+  line-height: 2rem;
 
   color: #ffffff;
 `;
 
 export const BoxEvent = styled.div`
-  width: 120px;
-  height: 156px;
+  width: 8.3vw;
+  height: 15vh;
   background: #f5a7d4;
   border-radius: 5px;
   display: flex;
