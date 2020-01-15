@@ -176,6 +176,43 @@
       "email": "marcelol@marcelol.com",
       "password": "g73hi3",
       "id": 11
+    },
+    {
+      "category": "Palhaco",
+      "price": "1111",
+      "day_shift": [
+        "morning",
+        "night"
+      ],
+      "week_days": [
+        "tuesday",
+        "sunday",
+        "saturday",
+        "friday",
+        "thursday"
+      ],
+      "name": "teste",
+      "email": "teste@teste.com",
+      "password": "teste",
+      "id": 12
+    },
+    {
+      "category": "Magico",
+      "price": "200",
+      "day_shift": [
+        "morning",
+        "night"
+      ],
+      "week_days": [
+        "thursday",
+        "sunday",
+        "wednesday",
+        "monday"
+      ],
+      "name": "testedatas",
+      "email": "testedatas@testedatas.com",
+      "password": "testedatas",
+      "id": 13
     }
   ],
   "events": [
@@ -388,6 +425,150 @@
       "user_id": 6,
       "week_day": "Tuesday",
       "id": 25
+    },
+    {
+      "name": "teste",
+      "address": "teste teste",
+      "date": "1579057200",
+      "day_shift": "afternoon",
+      "user_id": 7,
+      "week_day": "Wednesday",
+      "id": 26
+    },
+    {
+      "name": "tetete",
+      "address": "ttetete",
+      "date": "1580353200",
+      "day_shift": "morning",
+      "user_id": 7,
+      "week_day": "Thursday",
+      "id": 27
+    },
+    {
+      "name": "teste",
+      "address": "Rua Holanda, 662, 662",
+      "date": "1579230000",
+      "day_shift": "morning",
+      "user_id": 7,
+      "week_day": "Friday",
+      "id": 28
+    },
+    {
+      "name": "teste",
+      "address": "Rua Holanda, 662, 662",
+      "date": "1579230000",
+      "day_shift": "morning",
+      "user_id": 12,
+      "week_day": "Friday",
+      "id": 29
+    },
+    {
+      "name": "testedia15",
+      "address": "dia 15",
+      "date": "1579057200",
+      "day_shift": "morning",
+      "user_id": 7,
+      "week_day": "Wednesday",
+      "id": 30
+    },
+    {
+      "name": "teste dia 15",
+      "address": "dia 15",
+      "date": "1579057200",
+      "day_shift": "morning",
+      "user_id": 7,
+      "week_day": "Wednesday",
+      "id": 31
+    },
+    {
+      "name": "marcelo",
+      "address": "marcelo",
+      "date": "1579143600",
+      "day_shift": "morning",
+      "user_id": 7,
+      "week_day": "Thursday",
+      "id": 32
+    },
+    {
+      "name": "marcelo",
+      "address": "marcelo",
+      "date": "1579143600",
+      "day_shift": "night",
+      "user_id": 7,
+      "week_day": "Thursday",
+      "id": 33
+    },
+    {
+      "name": "testedia15",
+      "address": "dia a noite",
+      "date": "1579057200",
+      "day_shift": "night",
+      "user_id": 7,
+      "week_day": "Wednesday",
+      "id": 34
+    },
+    {
+      "name": "dia 15",
+      "address": "dia ",
+      "date": "1579057200",
+      "day_shift": "night",
+      "user_id": 7,
+      "week_day": "Wednesday",
+      "id": 35
+    },
+    {
+      "name": "domingo",
+      "address": "domingoNoite",
+      "date": "1578798000",
+      "day_shift": "morning",
+      "user_id": 13,
+      "week_day": "Sunday",
+      "id": 36
+    },
+    {
+      "name": "testedia14",
+      "address": "manha",
+      "date": "1578970800",
+      "day_shift": "morning",
+      "user_id": 7,
+      "week_day": "Tuesday",
+      "id": 37
+    },
+    {
+      "name": "dia 14",
+      "address": "noite",
+      "date": "1578970800",
+      "day_shift": "night",
+      "user_id": 7,
+      "week_day": "Tuesday",
+      "id": 38
+    },
+    {
+      "name": "segunda13",
+      "address": "noite",
+      "date": "1578884400",
+      "day_shift": "morning",
+      "user_id": 13,
+      "week_day": "Monday",
+      "id": 39
+    },
+    {
+      "name": "segundaNoite",
+      "address": "Rua Holanda, 662, 662",
+      "date": "1578884400",
+      "day_shift": "night",
+      "user_id": 13,
+      "week_day": "Monday",
+      "id": 40
+    },
+    {
+      "name": "quarta",
+      "address": "manha",
+      "date": "1579057200",
+      "day_shift": "morning",
+      "user_id": 13,
+      "week_day": "Wednesday",
+      "id": 41
     }
   ]
 }

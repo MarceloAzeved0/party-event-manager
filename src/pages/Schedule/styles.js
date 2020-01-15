@@ -4,6 +4,9 @@ import { Form as FormRock, Select } from '@rocketseat/unform';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   background-color: ${props => (props.modalIsOpen ? 'opacity 0.5' : '')};
 `;
 export const Form = styled(FormRock)`
@@ -323,7 +326,6 @@ export const TextEvent = styled.p`
   font-weight: ${props => (props.bold ? 'bold' : '')};
   font-size: 1.6rem;
   line-height: 2rem;
-
   color: #ffffff;
 `;
 
@@ -332,6 +334,9 @@ export const BoxEvent = styled.div`
   height: 15vh;
   background: #f5a7d4;
   border-radius: 5px;
+  padding-bottom: 1vh;
+  padding-left: 0.7vw;
+  padding-right: 0.7vw;
   display: flex;
   flex-direction: row;
   justify-content: center;

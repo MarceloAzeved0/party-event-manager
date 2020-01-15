@@ -173,8 +173,8 @@ export default function Schedule() {
 
       const date2 = moment()
         .subtract(week, 'weeks')
-        .startOf('monday')
-        .add(i, 'days')
+        .startOf('isoWeek')
+        .add(i - 1, 'days')
         .format('YYYY-MM-DD');
 
       const dateMoment = moment(date2).format('X');
@@ -194,8 +194,8 @@ export default function Schedule() {
               <p>
                 {moment()
                   .subtract(week, 'weeks')
-                  .startOf('monday')
-                  .add(i, 'days')
+                  .startOf('isoWeek')
+                  .add(i - 1, 'days')
                   .format('D')
                   .toString()
                   .padStart(2, '0')}
@@ -207,8 +207,8 @@ export default function Schedule() {
                   days[
                     moment()
                       .subtract(week, 'weeks')
-                      .startOf('monday')
-                      .add(i, 'days')
+                      .startOf('isoWeek')
+                      .add(i - 1, 'days')
                       .isoWeekday()
                   ]
                 }
