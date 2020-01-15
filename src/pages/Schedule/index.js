@@ -45,24 +45,6 @@ import {
   NotAvailable,
 } from './styles';
 
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    width: '39.3vw',
-    height: '79.7vh',
-    maxWidth: '567px',
-    maxHeight: '829px',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    background: '#FFFFFF',
-    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.17)',
-    borderRadius: '5px',
-  },
-};
-
 export default function Schedule() {
   const userData = useSelector(state => state.user.data);
   const events = useSelector(state => state.event.events);
@@ -94,6 +76,24 @@ export default function Schedule() {
       window.removeEventListener('resize', handleResize);
     };
   });
+
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      width: isMobile ? '88vw' : '39.3vw',
+      height: isMobile ? '73vh' : '79.7vh',
+      maxWidth: '567px',
+      maxHeight: '829px',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      background: '#FFFFFF',
+      boxShadow: 'box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.17)',
+      borderRadius: '5px',
+    },
+  };
 
   const handleSubmit = data => {
     const dataPayload = {
@@ -275,13 +275,23 @@ export default function Schedule() {
             <Label>Nome do Evento</Label>
           </Content>
           <Content>
-            <Input type="text" name="name" autoComplete="off" />
+            <Input
+              type="text"
+              width={isMobile && '100'}
+              name="name"
+              autoComplete="off"
+            />
           </Content>
           <Content>
             <Label>Local</Label>
           </Content>
           <Content>
-            <Input type="text" name="address" autoComplete="off" />
+            <Input
+              type="text"
+              width={isMobile && '100'}
+              name="address"
+              autoComplete="off"
+            />
           </Content>
           <ContentLabel>
             <DivColumn>
@@ -293,7 +303,12 @@ export default function Schedule() {
           </ContentLabel>
           <ContentLabel>
             <DivColumn>
-              <Input width={192} height={68} type="date" name="date" />
+              <Input
+                width={isMobile ? 40 : 12}
+                height={6.5}
+                type="date"
+                name="date"
+              />
             </DivColumn>
             <DivColumn>
               <SelectDayShift

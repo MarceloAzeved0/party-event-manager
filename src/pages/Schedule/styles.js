@@ -389,6 +389,7 @@ export const AddEvent = styled.button`
   border-radius: 5px;
   width: 32.1vw;
   margin-left: 2.4vw;
+  margin-right: 2.4vw;
   margin-top: 2.1vw;
   height: 8.17vh;
   p {
@@ -397,14 +398,19 @@ export const AddEvent = styled.button`
     font-weight: normal;
     font-size: 2.4rem;
     line-height: 3rem;
-    text-align: center;
 
     color: #ffffff;
+  }
+
+  @media (max-width: 671px) {
+    margin-left: 5.5vw;
+    margin-right: 5.5vw;
+    width: 271vw;
   }
 `;
 
 export const SelectDayShift = styled(Select)`
-  width: 15.6vw;
+  width: 13vw;
   height: 6.5vh;
   border: 1px solid #cccccc;
   box-sizing: border-box;
@@ -428,6 +434,11 @@ export const SelectDayShift = styled(Select)`
     text-align: center;
 
     color: #cccccc;
+  }
+
+  @media (max-width: 671px) {
+    width: 40vw;
+    margin-left: 10px;
   }
 `;
 
