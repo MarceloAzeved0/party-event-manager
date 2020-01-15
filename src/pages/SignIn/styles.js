@@ -34,7 +34,7 @@ export const ContentTitle = styled.div`
   /* background-color: #000000; */
   height: 19.23vh;
   margin-top: 9.23vh;
-  margin-left: 3.4vh;
+  margin-left: 3.4vw;
   display: flex;
   flex-direction: row;
   flex: 1;
