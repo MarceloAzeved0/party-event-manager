@@ -213,6 +213,23 @@
       "email": "testedatas@testedatas.com",
       "password": "testedatas",
       "id": 13
+    },
+    {
+      "category": "Palhaco",
+      "price": "890",
+      "day_shift": [
+        "night",
+        "afternoon"
+      ],
+      "week_days": [
+        "monday",
+        "sunday",
+        "thursday"
+      ],
+      "name": "marceloTeste",
+      "email": "marceloTeste@marceloTeste.com",
+      "password": "marceloTeste",
+      "id": 14
     }
   ],
   "events": [
@@ -623,6 +640,51 @@
       "user_id": 7,
       "week_day": "Tuesday",
       "id": 47
+    },
+    {
+      "name": "",
+      "address": "",
+      "date": "1579143600",
+      "day_shift": "afternoon",
+      "user_id": 7,
+      "week_day": "Thursday",
+      "id": 48
+    },
+    {
+      "name": "testedia7",
+      "address": "manha",
+      "date": "1578366000",
+      "day_shift": "morning",
+      "user_id": 7,
+      "week_day": "Tuesday",
+      "id": 49
+    },
+    {
+      "name": "teste21",
+      "address": "teste",
+      "date": "1579575600",
+      "day_shift": "morning",
+      "user_id": 7,
+      "week_day": "Tuesday",
+      "id": 50
+    },
+    {
+      "name": "testedia",
+      "address": "manha",
+      "date": "1580266800",
+      "day_shift": "morning",
+      "user_id": 7,
+      "week_day": "Wednesday",
+      "id": 51
+    },
+    {
+      "name": "teste29",
+      "address": "testetarde",
+      "date": "1580266800",
+      "day_shift": "night",
+      "user_id": 7,
+      "week_day": "Wednesday",
+      "id": 52
     }
   ]
 }

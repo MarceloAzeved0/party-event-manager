@@ -143,6 +143,9 @@ export default function Schedule() {
         }
       }
 
+      console.tron.log('eventM', eventsMarked);
+      console.tron.log('eventDayShi', events);
+
       lines.push(
         <ContentAvailable key={i}>
           {working && workingShift ? (
@@ -188,15 +191,43 @@ export default function Schedule() {
     for (let i = 0; i < length; i++) {
       eventsMarked = [];
       working = false;
-      if (userData.week_days && userData.week_days.includes(dayOfWeek[i])) {
-        working = true;
+      let date2;
+      if (!isMobile) {
+        if (userData.week_days && userData.week_days.includes(dayOfWeek[i])) {
+          working = true;
+          date2 = moment()
+            .subtract(weekDays, 'days')
+            .startOf('isoWeek')
+            .add(i - 1, 'days')
+            .format('YYYY-MM-DD');
+        }
+      } else {
+        date2 = moment()
+          .subtract(weekDays, 'days')
+          .format('YYYY-MM-DD');
+        console.tron.log(
+          'dia',
+          moment()
+            .subtract(weekDays, 'days')
+            .format('dddd')
+            .toString()
+            .toLowerCase()
+        );
+        if (
+          userData.week_days &&
+          userData.week_days.includes(
+            moment()
+              .subtract(weekDays, 'days')
+              .format('dddd')
+              .toString()
+              .toLowerCase()
+          )
+        ) {
+          working = true;
+        }
       }
 
-      const date2 = moment()
-        .subtract(weekDays, 'days')
-        .startOf(isMobile ? '' : 'isoWeek')
-        .add(isMobile ? i : i - 1, 'days')
-        .format('YYYY-MM-DD');
+      console.tron.log(date2);
 
       const dateMoment = moment(date2).format('X');
 
@@ -253,6 +284,11 @@ export default function Schedule() {
 
     return table;
   });
+
+  useEffect(() => {
+    createTable();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [weekDays]);
 
   useEffect(() => {
     createTable();
