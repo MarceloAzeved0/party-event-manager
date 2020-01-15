@@ -66,7 +66,7 @@ export const ButtonSignIn = styled.button`
   }
 `;
 
-export const LinkSignUp = styled.a`
+export const LinkSignUp = styled.p`
   width: 7.15vw;
   height: 2.4vh;
 

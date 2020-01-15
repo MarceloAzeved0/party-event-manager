@@ -8,6 +8,13 @@ export const Container = styled.div`
   height: 100%;
   overflow: hidden;
   background-color: ${props => (props.modalIsOpen ? 'opacity 0.5' : '')};
+
+  @media (max-width: 671px) {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(159.12deg, #fc66a4 0%, #993cff 98.7%);
+    opacity: 0.8;
+  }
 `;
 export const Form = styled(FormRock)`
   display: flex;
@@ -26,6 +33,17 @@ export const ContentTitle = styled.div`
   display: flex;
   flex: 1;
   justify-content: space-between;
+  margin-left: 11vw;
+  margin-top: 7vh;
+  margin-bottom: 2.8vh;
+
+  @media (max-width: 671px) {
+    margin-bottom: 1.9vh;
+    margin-top: 6.5vh;
+    margin-left: 14.4vw;
+    height: 100px;
+    width: 100vw;
+  }
 `;
 
 export const ContentInput = styled.div`
@@ -44,17 +62,45 @@ export const MonthTitle = styled.h1`
   font-weight: bold;
   font-size: 3rem;
   line-height: 3.7rem;
-  margin-left: 11vw;
-  margin-top: 7vh;
-  margin-bottom: 2.8vh;
   /* identical to box height */
 
-  text-align: center;
-
-  width: 10vw;
-  height: 3.6vh;
-
+  display: flex;
+  justify-content: flex-start;
   color: #565656;
+`;
+
+export const MonthTitleMobile = styled.h1`
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 3.7rem;
+  /* identical to box height */
+
+  display: flex;
+  justify-content: flex-start;
+  color: #565656;
+
+  @media (max-width: 671px) {
+    margin-top: 6.5vh;
+    margin-left: 14.4vw;
+    height: 5vh;
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    color: #ffffff;
+  }
+`;
+
+export const ContentEvent = styled.div`
+  @media (max-width: 671px) {
+    height: 3.4vh;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    /* margin-bottom: -30vh; */
+  }
 `;
 
 export const NewEvent = styled.button`
@@ -64,8 +110,6 @@ export const NewEvent = styled.button`
   background: #f180c1;
   border-radius: 5px;
   margin-right: 11.8vw;
-  margin-top: 7.2vh;
-  margin-bottom: 3.1vh;
 
   p {
     font-family: Quicksand;
@@ -79,12 +123,46 @@ export const NewEvent = styled.button`
 
     color: #ffffff;
   }
+
+  @media (max-width: 671px) {
+    display: none;
+  }
+`;
+
+export const NewEventBottom = styled.button`
+  background: transparent;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 5px;
+  height: 7.4vh;
+  width: 70vw;
+
+  p {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+  }
+
+  @media (max-width: 671px) {
+  }
 `;
 
 export const ScheduleContainer = styled.div`
   display: flex;
   justify-content: space-between;
   flex: 1;
+
+  @media (max-width: 671px) {
+    width: 100vw;
+    /* margin-bottom: 19.4vh; */
+  }
 `;
 
 export const ScheduleWeek = styled.div`
@@ -97,6 +175,11 @@ export const ScheduleWeek = styled.div`
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+
+  @media (max-width: 671px) {
+    min-height: unset;
+    width: 71.2vw;
+  }
 `;
 
 export const SideSchedule = styled.div`
@@ -115,6 +198,12 @@ export const SideSchedule = styled.div`
     color: inherit;
     border: none;
     padding: 0;
+  }
+
+  @media (max-width: 671px) {
+    margin-right: 0px;
+    height: 68vh;
+    width: 8.2vw;
   }
 `;
 
@@ -225,6 +314,12 @@ export const ContentAvailable = styled.div`
   display: flex;
   margin-top: 14px;
   flex-direction: row;
+
+  @media (max-width: 671px) {
+    height: 20vh;
+    width: 65vw;
+    margin-top: 18px;
+  }
 `;
 
 export const NotAvailable = styled.div`
@@ -251,6 +346,16 @@ export const NotAvailable = styled.div`
 
     opacity: 0.3;
   }
+
+  @media (max-width: 671px) {
+    height: 20vh;
+    width: 66vw;
+    p {
+      font-size: 1.8rem;
+      line-height: 2.2rem;
+    }
+    max-width: unset;
+  }
 `;
 
 export const Available = styled.div`
@@ -260,6 +365,12 @@ export const Available = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
+
+  @media (max-width: 671px) {
+    height: 20vh;
+    width: 66vw;
+    max-width: unset;
+  }
 `;
 
 export const TitleModal = styled.h1`
@@ -342,4 +453,10 @@ export const BoxEvent = styled.div`
   justify-content: center;
   align-items: center;
   flex: 1;
+
+  @media (max-width: 671px) {
+    height: 20vh;
+    width: 66vw;
+    max-width: unset;
+  }
 `;

@@ -50,13 +50,13 @@ export default function SignIn() {
             <Label>E-mail</Label>
           </ContentLabel>
           <ContentInput>
-            <Input name="email" type="text" autocomplete="off" />
+            <Input name="email" type="text" autoComplete="off" />
           </ContentInput>
           <ContentLabel>
             <Label>Senha</Label>
           </ContentLabel>
           <ContentInput>
-            <Input name="password" type="password" autocomplete="off" />
+            <Input name="password" type="password" autoComplete="off" />
           </ContentInput>
           <ContentButton>
             <ButtonLogin type="submit">Entrar</ButtonLogin>

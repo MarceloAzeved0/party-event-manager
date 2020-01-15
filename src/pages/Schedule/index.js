@@ -16,11 +16,14 @@ import {
   Available,
   BoxEvent,
   Container,
+  ContentEvent,
   NewEvent,
   MonthTitle,
+  NewEventBottom,
   ContentTitle,
   SelectDayShift,
   SideSchedule,
+  MonthTitleMobile,
   ScheduleContainer,
   ContentLabel,
   ScheduleWeek,
@@ -63,6 +66,7 @@ const customStyles = {
 export default function Schedule() {
   const userData = useSelector(state => state.user.data);
   const events = useSelector(state => state.event.events);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const dispatch = useDispatch();
   Modal.setAppElement('#root');
@@ -74,7 +78,23 @@ export default function Schedule() {
     eventsFunction();
   }, [dispatch, userData.id]);
 
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 671);
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth > 671 && isMobile) {
+        setIsMobile(false);
+      } else if (window.innerWidth <= 671 && !isMobile) {
+        setIsMobile(true);
+      }
+    }
+
+    window.addEventListener('resize', handleResize);
+    return function clean() {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
+
   const handleSubmit = data => {
     const dataPayload = {
       ...data,
@@ -89,7 +109,7 @@ export default function Schedule() {
     setModalIsOpen(false);
   };
 
-  const [week, setWeek] = useState(0);
+  const [weekDays, setWeekDays] = useState(0);
   const days = [
     '',
     'Segunda',
@@ -124,7 +144,7 @@ export default function Schedule() {
       }
 
       lines.push(
-        <ContentAvailable>
+        <ContentAvailable key={i}>
           {working && workingShift ? (
             eventShiftMarked ? (
               <BoxEvent>
@@ -164,7 +184,8 @@ export default function Schedule() {
     const table = [];
     let working = false;
     let eventsMarked = [];
-    for (let i = 0; i < 7; i++) {
+    const length = isMobile ? 1 : 7;
+    for (let i = 0; i < length; i++) {
       eventsMarked = [];
       working = false;
       if (userData.week_days && userData.week_days.includes(dayOfWeek[i])) {
@@ -172,9 +193,9 @@ export default function Schedule() {
       }
 
       const date2 = moment()
-        .subtract(week, 'weeks')
-        .startOf('isoWeek')
-        .add(i - 1, 'days')
+        .subtract(weekDays, 'days')
+        .startOf(isMobile ? '' : 'isoWeek')
+        .add(isMobile ? i : i - 1, 'days')
         .format('YYYY-MM-DD');
 
       const dateMoment = moment(date2).format('X');
@@ -189,34 +210,40 @@ export default function Schedule() {
 
       table.push(
         <>
-          <ColumnContent>
-            <CircleDay>
-              <p>
-                {moment()
-                  .subtract(week, 'weeks')
-                  .startOf('isoWeek')
-                  .add(i - 1, 'days')
-                  .format('D')
-                  .toString()
-                  .padStart(2, '0')}
-              </p>
-            </CircleDay>
-            <Content>
-              <Title>
-                {
-                  days[
-                    moment()
-                      .subtract(week, 'weeks')
-                      .startOf('isoWeek')
-                      .add(i - 1, 'days')
-                      .isoWeekday()
-                  ]
-                }
-              </Title>
-            </Content>
-            <ContentLine>
-              <Line />
-            </ContentLine>
+          <ColumnContent key={i}>
+            {!isMobile && (
+              <CircleDay>
+                <p>
+                  {moment()
+                    .subtract(weekDays, 'days')
+                    .startOf(isMobile ? '' : 'isoWeek')
+                    .add(isMobile ? i : i - 1, 'days')
+                    .format('D')
+                    .toString()
+                    .padStart(2, '0')}
+                </p>
+              </CircleDay>
+            )}
+            {!isMobile && (
+              <Content>
+                <Title>
+                  {
+                    days[
+                      moment()
+                        .subtract(weekDays, 'days')
+                        .startOf(isMobile ? '' : 'isoWeek')
+                        .add(isMobile ? i : i - 1, 'days')
+                        .isoWeekday()
+                    ]
+                  }
+                </Title>
+              </Content>
+            )}
+            {!isMobile && (
+              <ContentLine>
+                <Line />
+              </ContentLine>
+            )}
             {listEvents(working, eventsMarked)}
           </ColumnContent>
           {i === 6 ? '' : <LineVert />}
@@ -248,13 +275,13 @@ export default function Schedule() {
             <Label>Nome do Evento</Label>
           </Content>
           <Content>
-            <Input type="text" name="name" autocomplete="off" />
+            <Input type="text" name="name" autoComplete="off" />
           </Content>
           <Content>
             <Label>Local</Label>
           </Content>
           <Content>
-            <Input type="text" name="address" autocomplete="off" />
+            <Input type="text" name="address" autoComplete="off" />
           </Content>
           <ContentLabel>
             <DivColumn>
@@ -279,6 +306,7 @@ export default function Schedule() {
               />
             </DivColumn>
           </ContentLabel>
+
           <Content>
             <AddEvent type="submit">
               <p>Adicionar Evento</p>
@@ -286,31 +314,64 @@ export default function Schedule() {
           </Content>
         </Form>
       </Modal>
-      <ContentTitle>
-        <MonthTitle>
-          {moment()
-            .subtract(week, 'weeks')
-            .startOf('monday')
-            .locale('pt-br')
-            .format('MMMM')}
-        </MonthTitle>
-        <NewEvent type="button" onClick={() => setModalIsOpen(true)}>
-          <p>Novo Evento</p>
-        </NewEvent>
-      </ContentTitle>
+      {!isMobile && (
+        <ContentTitle>
+          <MonthTitle>
+            {moment()
+              .subtract(weekDays, 'days')
+              .startOf('isoWeek')
+              .locale('pt-br')
+              .format('MMMM')}
+          </MonthTitle>
+
+          <NewEvent type="button" onClick={() => setModalIsOpen(true)}>
+            <p>Novo Evento</p>
+          </NewEvent>
+        </ContentTitle>
+      )}
+      {isMobile && (
+        <MonthTitleMobile>
+          {isMobile
+            ? `${moment()
+                .subtract(weekDays, 'days')
+                .startOf()
+                .locale('pt-br')
+                .format('DD')} de ${moment()
+                .subtract(weekDays, 'days')
+                .startOf()
+                .locale('pt-br')
+                .format('MMMM')}`
+            : moment()
+                .subtract(weekDays, 'days')
+                .startOf('isoWeek')
+                .locale('pt-br')
+                .format('MMMM')}
+        </MonthTitleMobile>
+      )}
       <ScheduleContainer>
-        <SideSchedule>
-          <LeftImage onClick={() => setWeek(week + 1)}>
-            <img src={LeftArrow} alt="arrow left" />
-          </LeftImage>
+        <SideSchedule onClick={() => isMobile && setWeekDays(weekDays + 1)}>
+          {!isMobile && (
+            <LeftImage onClick={() => setWeekDays(weekDays + 7)}>
+              <img src={LeftArrow} alt="arrow left" />
+            </LeftImage>
+          )}
         </SideSchedule>
         <ScheduleWeek>{createTable()}</ScheduleWeek>
-        <SideSchedule>
-          <RightImage onClick={() => setWeek(week - 1)}>
-            <img src={RightArrow} alt="arrow right" />
-          </RightImage>
+        <SideSchedule onClick={() => isMobile && setWeekDays(weekDays - 1)}>
+          {!isMobile && (
+            <RightImage onClick={() => setWeekDays(weekDays - 7)}>
+              <img src={RightArrow} alt="arrow right" />
+            </RightImage>
+          )}
         </SideSchedule>
       </ScheduleContainer>
+      {isMobile && (
+        <ContentEvent>
+          <NewEventBottom type="button" onClick={() => setModalIsOpen(true)}>
+            <p>Adicionar Evento</p>
+          </NewEventBottom>
+        </ContentEvent>
+      )}
     </Container>
   );
 }
