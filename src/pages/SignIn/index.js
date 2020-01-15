@@ -72,7 +72,7 @@ export default function SignIn() {
             <NoHaveAccount>Não possui uma conta?</NoHaveAccount>
           </Content>
           <Content>
-            <Link to="register">
+            <Link to="register" style={{ textDecoration: 'none' }}>
               <CreateAccount>Criar Conta</CreateAccount>
             </Link>
           </Content>

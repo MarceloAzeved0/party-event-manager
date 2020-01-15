@@ -36,10 +36,10 @@ export default function Main() {
           </Title>
         </ContentTitle>
         <ContentButton>
-          <Link to="login">
+          <Link to="login" style={{ textDecoration: 'none' }}>
             <ButtonSignIn>Entrar</ButtonSignIn>
           </Link>
-          <Link to="register">
+          <Link to="register" style={{ textDecoration: 'none' }}>
             <LinkSignUp>Criar conta</LinkSignUp>
           </Link>
         </ContentButton>

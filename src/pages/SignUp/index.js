@@ -78,7 +78,7 @@ export default function SignUp({ history }) {
             <NoHaveAccount>Já possui uma conta?</NoHaveAccount>
           </ContentBottom>
           <ContentBottom>
-            <Link to="login">
+            <Link to="login" style={{ textDecoration: 'none' }}>
               <CreateAccount>Entrar</CreateAccount>
             </Link>
           </ContentBottom>
