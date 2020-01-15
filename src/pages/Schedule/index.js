@@ -143,9 +143,6 @@ export default function Schedule() {
         }
       }
 
-      console.tron.log('eventM', eventsMarked);
-      console.tron.log('eventDayShi', events);
-
       lines.push(
         <ContentAvailable key={i}>
           {working && workingShift ? (
@@ -205,14 +202,6 @@ export default function Schedule() {
         date2 = moment()
           .subtract(weekDays, 'days')
           .format('YYYY-MM-DD');
-        console.tron.log(
-          'dia',
-          moment()
-            .subtract(weekDays, 'days')
-            .format('dddd')
-            .toString()
-            .toLowerCase()
-        );
         if (
           userData.week_days &&
           userData.week_days.includes(
@@ -226,8 +215,6 @@ export default function Schedule() {
           working = true;
         }
       }
-
-      console.tron.log(date2);
 
       const dateMoment = moment(date2).format('X');
 
