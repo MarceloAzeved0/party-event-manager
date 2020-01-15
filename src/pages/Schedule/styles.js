@@ -4,9 +4,6 @@ import { Form as FormRock, Select } from '@rocketseat/unform';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
   background-color: ${props => (props.modalIsOpen ? 'opacity 0.5' : '')};
 
   @media (max-width: 671px) {
@@ -31,7 +28,7 @@ export const Form = styled(FormRock)`
 
 export const ContentTitle = styled.div`
   display: flex;
-  flex: 1;
+  height: 5vh;
   justify-content: space-between;
   margin-left: 11vw;
   margin-top: 7vh;
@@ -56,12 +53,13 @@ export const ContentInput = styled.div`
   flex: 1;
 `;
 
-export const MonthTitle = styled.h1`
+export const MonthTitle = styled.p`
   font-family: Quicksand;
   font-style: normal;
   font-weight: bold;
   font-size: 3rem;
   line-height: 3.7rem;
+  height: 5vh;
   /* identical to box height */
 
   display: flex;
@@ -161,7 +159,6 @@ export const ScheduleContainer = styled.div`
 
   @media (max-width: 671px) {
     width: 100vw;
-    /* margin-bottom: 19.4vh; */
   }
 `;
 
@@ -175,6 +172,7 @@ export const ScheduleWeek = styled.div`
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+  padding-bottom: 15px;
 
   @media (max-width: 671px) {
     min-height: unset;
