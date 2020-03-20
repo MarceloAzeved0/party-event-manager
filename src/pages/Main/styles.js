@@ -73,11 +73,11 @@ export const LinkSignUp = styled.p`
   font-family: Quicksand;
   font-style: normal;
   font-weight: normal;
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 2.5rem;
   /* identical to box height */
 
-  color: #e77cca;
+  color: #000;
 
   @media (max-width: 671px) {
     background: #ffffff;
@@ -122,9 +122,10 @@ export const ContentButton = styled.div`
   width: 50vw;
   height: 5.9vh;
   display: flex;
-  flex-direction: row;
   margin-top: 7.78vh;
   margin-left: 3.12vw;
+  flex-direction: column;
+  justify-content: center;
 
   @media (max-width: 671px) {
     flex-direction: column;
@@ -162,7 +163,7 @@ export const Title = styled.p`
   font-weight: normal;
   font-size: 3vh;
   line-height: 4.5rem;
-  color: #565656;
+  color: #000;
 
   @media (max-width: 671px) {
     color: #ffffff;

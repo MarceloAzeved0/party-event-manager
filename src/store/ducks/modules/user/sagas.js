@@ -32,25 +32,55 @@ export function* login({ payload }) {
 
 export function* createUser({ payload }) {
   try {
-    yield put(Creators.loginRequest());
     const user = yield select(getUser);
     const data = { ...payload, ...user };
 
-    const response = yield call(api.post, '/users', data);
+    const dataAPI = {
+      user: {
+        name: data.name || '',
+        email: data.email || '',
+        photo_url: 'Foto do usuário',
+      },
+      role: data.role || '',
+      company: data.company || '',
+      address: {
+        street: data.street || '',
+        number: data.number || '',
+        city: data.city || '',
+        state: 'Rio Grande do Sul',
+        cep: data.cep || '',
+      },
+      embedded: true,
+    };
 
-    if (!response.status === 201 && !response.status === 200) {
+    const resp = yield call(() =>
+      fetch('http://api-test.triider.com/api/partner/landing', {
+        method: 'POST',
+        headers: {
+          'api-token':
+            '72ec6a1b6be64fc917e28ec9cf9a3f0d:ba26fa827caa8f7fb358f0fcd158f398cfb7065a7c80948aa11c1f7568e19ff0',
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(dataAPI),
+      }).then(response => response.json())
+    );
+
+    if (!resp.status === 201 && !resp.status === 200) {
       toast.error('Falha na criação da conta');
+      yield history.push('/register');
       return;
     }
+    yield put(Creators.createEmbedded(resp));
     toast.success('Conta criada com sucesso!');
-    yield put(Creators.loginSuccess(response.data));
     history.push('/schedule');
   } catch (err) {
+    console.tron.log('erro', err);
     toast.error(
-      'Falha na criação da conta',
+      'Falha na criação da contaaa',
       'Houve um erro na criação, verifique seus dados'
     );
     yield put(Creators.loginFailure(err));
+    yield history.push('/register');
   }
 }
 

@@ -24,18 +24,31 @@ import {
 import SideImageJoker from '../../components/SideImageJoker';
 import { Label } from '../../components/label';
 import { Creators } from '../../store/ducks/modules/user';
+import { Select } from '../../components/Select';
+
+const Categories = [
+  { title: 'Selecione...' },
+  { id: 'INQUILINO', title: 'Inquilino' },
+  { id: 'PROPRIETARIO', title: 'Proprietario' },
+];
+
+const Categories2 = [
+  { title: 'Selecione...' },
+  { id: 'guarida', title: 'Guarida' },
+  { id: 'vilarica', title: 'Vila Rica' },
+];
 
 const schema = Yup.object().shape({
   name: Yup.string().required('O nome é obrigatório'),
   email: Yup.string()
     .email('Insira um e-mail válido')
     .required('O email é obrigatório'),
-  password: Yup.string().required('A senha é obrigatória'),
 });
 
 export default function SignUp({ history }) {
   const dispatch = useDispatch();
   const handleSubmit = data => {
+    console.tron.log('data', data);
     dispatch(Creators.nextUser(data));
     history.push('/registerFinish');
   };
@@ -46,7 +59,7 @@ export default function SignUp({ history }) {
         <ContentTitle>
           <Title>Criar Conta</Title>
         </ContentTitle>
-        <Form schema={schema} onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
           <ContentLabel>
             <Label>Qual o seu nome?</Label>
           </ContentLabel>
@@ -60,10 +73,16 @@ export default function SignUp({ history }) {
             <Input name="email" type="email" autoComplete="off" />
           </ContentInput>
           <ContentLabel>
-            <Label>Crie uma senha</Label>
+            <Label>Selecione a imobiliária</Label>
           </ContentLabel>
           <ContentInput>
-            <Input name="password" type="password" autoComplete="off" />
+            <Select width="32.2vw" name="company" options={Categories2} />
+          </ContentInput>
+          <ContentLabel>
+            <Label>Selecione o perfil</Label>
+          </ContentLabel>
+          <ContentInput>
+            <Select width="34.2vw" name="role" options={Categories} />
           </ContentInput>
           <ContentButton>
             <ButtonLogin type="submit">Avançar</ButtonLogin>
@@ -74,14 +93,14 @@ export default function SignUp({ history }) {
           <ContentLine>
             <Line />
           </ContentLine>
-          <ContentBottom>
+          {/* <ContentBottom>
             <NoHaveAccount>Já possui uma conta?</NoHaveAccount>
           </ContentBottom>
           <ContentBottom>
             <Link to="login" style={{ textDecoration: 'none' }}>
               <CreateAccount>Entrar</CreateAccount>
             </Link>
-          </ContentBottom>
+          </ContentBottom> */}
         </Form>
       </ContentCol>
     </Container>

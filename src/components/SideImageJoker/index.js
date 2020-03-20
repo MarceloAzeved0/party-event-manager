@@ -6,7 +6,6 @@ export default function SideImageJoker() {
   return (
     <Container>
       <ImgSide />
-      <ImageContainer />
     </Container>
   );
 }

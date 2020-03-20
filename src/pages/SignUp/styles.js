@@ -160,6 +160,7 @@ export const ContentInput = styled.div`
   margin-bottom: 10px;
   margin-left: 3.4vw;
   display: flex;
+  height: 60px;
   flex-direction: row;
   flex: 1;
   @media (max-width: 671px) {

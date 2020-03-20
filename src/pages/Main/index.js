@@ -31,16 +31,11 @@ export default function Main() {
       <SideImageJoker />
       <ContainerCol>
         <ContentTitle>
-          <Title>
-            Gerenciador de eventos <br /> para animadores de festas
-          </Title>
+          <Title>Simulador da página nova de Parceiros</Title>
         </ContentTitle>
         <ContentButton>
-          <Link to="login" style={{ textDecoration: 'none' }}>
-            <ButtonSignIn>Entrar</ButtonSignIn>
-          </Link>
-          <Link to="register" style={{ textDecoration: 'none' }}>
-            <LinkSignUp>Criar conta</LinkSignUp>
+          <Link to="register">
+            <LinkSignUp>Testar</LinkSignUp>
           </Link>
         </ContentButton>
         <ContentLine>
@@ -49,15 +44,14 @@ export default function Main() {
         <ContentCard>
           <Card>
             <ImgIcon src={Balloon} alt="balloon" />
-            <TextCard>Cadastre suas festas e organize sua Agenda!</TextCard>
+            <TextCard>Crie pedidos direto da sua agência virtual!</TextCard>
           </Card>
         </ContentCard>
         <ContentCardParty>
           <CardParty>
             <ImgIcon src={Party} alt="party" />
             <TextCard>
-              Informe sua disponibilidade de dias e horários e crie um
-              calendário personalizado
+              Automatize o processo de contratação de serviços
             </TextCard>
           </CardParty>
         </ContentCardParty>

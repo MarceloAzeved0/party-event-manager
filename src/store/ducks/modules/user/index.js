@@ -6,6 +6,7 @@ export const Types = {
   LOGOUT: 'user/LOGOUT',
   CREATE_USER: 'user/CREATE_USER',
   NEXT_USER: 'user/NEXT_USER',
+  CREATE_EMBEDDED: 'user/EMBEDDED',
 };
 
 export const Creators = {
@@ -25,6 +26,12 @@ export const Creators = {
     };
   },
 
+  createEmbedded: data => {
+    return {
+      type: Types.CREATE_EMBEDDED,
+      payload: data,
+    };
+  },
   loginSuccess: data => {
     return {
       type: Types.LOGIN_SUCCESS,
@@ -63,6 +70,8 @@ const initialState = {
   data: {},
   error: null,
   loading: false,
+  embedded: false,
+  link: '',
 };
 
 export default function reducer(state = initialState, action) {
@@ -98,8 +107,18 @@ export default function reducer(state = initialState, action) {
           ...state.user,
           name: action.payload.name,
           email: action.payload.email,
-          password: action.payload.password,
+          role: action.payload.role,
+          company: action.payload.company,
         },
+      };
+    case Types.CREATE_EMBEDDED:
+      return {
+        ...state,
+        link: action.payload.link,
+        embedded: action.payload.success,
+        signed: true,
+        loading: false,
+        error: null,
       };
 
     default:

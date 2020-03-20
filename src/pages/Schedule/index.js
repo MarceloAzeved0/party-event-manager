@@ -48,6 +48,7 @@ import {
 export default function Schedule() {
   const userData = useSelector(state => state.user.data);
   const events = useSelector(state => state.event.events);
+  const linkEmbed = useSelector(state => state.user.link);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const dispatch = useDispatch();
@@ -55,10 +56,12 @@ export default function Schedule() {
 
   useEffect(() => {
     async function eventsFunction() {
-      await dispatch(Creators.listEvents(userData.id));
+      if (linkEmbed === '') {
+        await dispatch(Creators.listEvents(userData.id));
+      }
     }
     eventsFunction();
-  }, [dispatch, userData.id]);
+  }, [dispatch, linkEmbed, userData.id]);
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 671);
 
@@ -387,21 +390,27 @@ export default function Schedule() {
         </MonthTitleMobile>
       )}
       <ScheduleContainer>
-        <SideSchedule onClick={() => isMobile && setWeekDays(weekDays + 1)}>
-          {!isMobile && (
-            <LeftImage onClick={() => setWeekDays(weekDays + 7)}>
-              <img src={LeftArrow} alt="arrow left" />
-            </LeftImage>
-          )}
-        </SideSchedule>
-        <ScheduleWeek>{createTable()}</ScheduleWeek>
-        <SideSchedule onClick={() => isMobile && setWeekDays(weekDays - 1)}>
-          {!isMobile && (
-            <RightImage onClick={() => setWeekDays(weekDays - 7)}>
-              <img src={RightArrow} alt="arrow right" />
-            </RightImage>
-          )}
-        </SideSchedule>
+        {linkEmbed !== '' ? (
+          <h1>{linkEmbed}</h1>
+        ) : (
+          <>
+            <SideSchedule onClick={() => isMobile && setWeekDays(weekDays + 1)}>
+              {!isMobile && (
+                <LeftImage onClick={() => setWeekDays(weekDays + 7)}>
+                  <img src={LeftArrow} alt="arrow left" />
+                </LeftImage>
+              )}
+            </SideSchedule>
+            <ScheduleWeek>{createTable()}</ScheduleWeek>
+            <SideSchedule onClick={() => isMobile && setWeekDays(weekDays - 1)}>
+              {!isMobile && (
+                <RightImage onClick={() => setWeekDays(weekDays - 7)}>
+                  <img src={RightArrow} alt="arrow right" />
+                </RightImage>
+              )}
+            </SideSchedule>
+          </>
+        )}
       </ScheduleContainer>
       {isMobile && (
         <ContentEvent>

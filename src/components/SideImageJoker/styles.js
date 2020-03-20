@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import joker from '../../assets/joker.svg';
+import partner from '../../assets/partner2.jpeg';
 
 export const Container = styled.div`
   z-index: -1;
@@ -8,9 +9,10 @@ export const Container = styled.div`
 `;
 
 export const ImgSide = styled.div`
-  background: url(${joker});
+  background: url(${partner});
   display: flex;
   position: absolute;
+  background-size: cover;
   background-repeat: no-repeat;
   width: 46.6vw;
   height: 94.23vh;

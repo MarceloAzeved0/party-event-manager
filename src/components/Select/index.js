@@ -6,7 +6,7 @@ export const Select = styled(SelectRock)`
   box-sizing: border-box;
   border-radius: 5px;
   width: ${props => (props.width ? props.width : '34.8vw')};
-  height: 5.77vh;
+  height: 50px;
   max-width: 36.8vw;
   padding: 1.2rem;
 
