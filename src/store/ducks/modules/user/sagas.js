@@ -74,7 +74,6 @@ export function* createUser({ payload }) {
     toast.success('Conta criada com sucesso!');
     history.push('/schedule');
   } catch (err) {
-    console.tron.log('erro', err);
     toast.error(
       'Falha na criação da contaaa',
       'Houve um erro na criação, verifique seus dados'

@@ -48,7 +48,6 @@ const schema = Yup.object().shape({
 export default function SignUp({ history }) {
   const dispatch = useDispatch();
   const handleSubmit = data => {
-    console.tron.log('data', data);
     dispatch(Creators.nextUser(data));
     history.push('/registerFinish');
   };

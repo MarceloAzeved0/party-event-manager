@@ -16,7 +16,6 @@ export function* createEvent({ payload }) {
     }
     toast.success('Evento criado com sucesso!');
     const user = yield select(getUserData);
-    // console.tron.log('user', user);
     yield put(Creators.listEvents(user.id));
   } catch (err) {
     toast.error(
