@@ -57,8 +57,11 @@ export function* createUser({ payload }) {
       fetch('http://api-test.triider.com/api/partner/landing', {
         method: 'POST',
         headers: {
-          'api-token':
-            '72ec6a1b6be64fc917e28ec9cf9a3f0d:ba26fa827caa8f7fb358f0fcd158f398cfb7065a7c80948aa11c1f7568e19ff0',
+          'api-token': `${
+            data.company === 'guarida'
+              ? '32113a2ae1276f3cfc3e9192063060ef:84387715bda0a0d544e1b52d296d3c690e1786b27260cd10aa026f0893e6321e'
+              : '24fde25754bf2c97997ca793360ecb00:6f83a4e42faa5bd89031b59458d338eeda9a8a99529473e6873d5fb53fb18789'
+          }`,
           'content-type': 'application/json',
         },
         body: JSON.stringify(dataAPI),

@@ -355,7 +355,7 @@ export default function Schedule() {
           </Content>
         </Form>
       </Modal>
-      {!isMobile && (
+      {!isMobile && linkEmbed === '' && (
         <ContentTitle>
           <MonthTitle>
             {moment()
@@ -391,7 +391,11 @@ export default function Schedule() {
       )}
       <ScheduleContainer>
         {linkEmbed !== '' ? (
-          <h1>{linkEmbed}</h1>
+          <iframe
+            style={{ width: '100%', height: '850px' }}
+            src={linkEmbed}
+            title="partner"
+          />
         ) : (
           <>
             <SideSchedule onClick={() => isMobile && setWeekDays(weekDays + 1)}>
