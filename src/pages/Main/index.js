@@ -55,9 +55,6 @@ export default function Main() {
             </TextCard>
           </CardParty>
         </ContentCardParty>
-        <ContentTriider>
-          <TextFooter>Desafio Front end Triider</TextFooter>
-        </ContentTriider>
       </ContainerCol>
     </Container>
   );
